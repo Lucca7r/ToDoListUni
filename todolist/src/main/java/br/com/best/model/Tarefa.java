@@ -15,6 +15,8 @@ public class Tarefa {
     public Tarefa() {
     }
 
+    // criação do construtor
+
     public Tarefa(Long taksId, String name, String description, LocalDate startDate, LocalDate endDate,
             LocalDateTime createdAt) {
         this.taksId = taksId;
