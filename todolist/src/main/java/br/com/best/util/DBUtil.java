@@ -8,8 +8,8 @@ import java.sql.Statement;
 public class DBUtil {
 
     // trocar para secrets
-    private static final String URL = "jdbc:postgres://ykmjoobw:nX-_mS31qqed0qL85JX87TRf1EQR7L97@isabelle.db.elephantsql.com/ykmjoobw";
-    private static final String USUARIO = "qeyrswvn";
+    private static final String URL = "jdbc:postgres://isabelle.db.elephantsql.com/ykmjoobw";
+    private static final String USUARIO = "ykmjoobw";
     private static final String SENHA = "nX-_mS31qqed0qL85JX87TRf1EQR7L97";
 
     private Connection conexao;
