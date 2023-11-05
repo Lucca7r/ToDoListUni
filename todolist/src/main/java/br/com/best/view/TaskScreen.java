@@ -2,6 +2,8 @@ package br.com.best.view;
 
 import javax.swing.JFrame;
 
+import br.com.best.model.Tarefa;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -245,11 +247,16 @@ public class TaskScreen extends JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        String nomeTask = jTextField1.getText();
+        String descricaoTask = jTextArea1.getText();
+          
+        Tarefa teste = new Tarefa();
+        teste.setName(nomeTask);
+        String nome = teste.getName();
+        System.out.println(nome);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
