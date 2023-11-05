@@ -1,4 +1,7 @@
 package br.com.best.view;
+import javax.swing.*;
+import java.awt.event.*;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -28,9 +31,9 @@ public class Form1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel(); 
+        jButton1 = new javax.swing.JButton(); //criar nova tarefa 
+        jButton2 = new javax.swing.JButton(); //filtrar
         jPanel3 = new javax.swing.JPanel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
@@ -38,10 +41,10 @@ public class Form1 extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox(); 
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel(); 
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -160,10 +163,10 @@ public class Form1 extends javax.swing.JFrame {
         jLabel6.setText("05/11/2023 - 14:05");
 
         jLabel7.setBackground(new java.awt.Color(182, 214, 168));
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setForeground(new java.awt.Color(100, 0, 0));
         jLabel7.setText("Alta");
         jLabel7.setToolTipText("");
-        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(100, 0, 0)));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -293,10 +296,26 @@ public class Form1 extends javax.swing.JFrame {
                 new Form1().setVisible(true);
             }
         });
+
+        /*jButton1.actionPerformed(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                // Carrega a tela da classe TaksScreen
+                TaskScreen tasksScreen = new TaskScreen();
+                tasksScreen.setVisible(true);
+            }
+        });*/
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                // Carrega a tela da classe TaksScreen
+                System.out.println("Button clicked!");
+                TaskScreen tasksScreen = new TaskScreen();
+                tasksScreen.setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private static javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;

@@ -1,24 +1,24 @@
 package br.com.best.model;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.sql.Date;
+//import java.util.Date;
 
 public class Tarefa {
 
     private Long taksId;
     private String name;
     private String description;
-    private LocalDate startDate;
-    private LocalDate endDate;
-    private LocalDateTime createdAt;
+    private Date startDate;
+    private Date endDate;
+    private Date createdAt;
 
     public Tarefa() {
     }
 
     // criação do construtor
 
-    public Tarefa(Long taksId, String name, String description, LocalDate startDate, LocalDate endDate,
-            LocalDateTime createdAt) {
+    public Tarefa(Long taksId, String name, String description, Date startDate, Date endDate,
+            Date createdAt) {
         this.taksId = taksId;
         this.name = name;
         this.description = description;
@@ -51,29 +51,31 @@ public class Tarefa {
         this.description = description;
     }
 
-    public LocalDate getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
+    /*public Date getCreatedAt() {
+        return Date();
+    }*/
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    /*public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
-    }
+    }*/
+
+   
 
     @Override
     public String toString() {

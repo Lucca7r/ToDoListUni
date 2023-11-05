@@ -1,5 +1,7 @@
 package br.com.best.view;
 
+import javax.swing.JFrame;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -10,7 +12,7 @@ package br.com.best.view;
  *
  * @author Lorrana
  */
-public class TaskScreen extends javax.swing.JFrame {
+public class TaskScreen extends JFrame {
 
     /**
      * Creates new form TaskScreen
@@ -28,25 +30,25 @@ public class TaskScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel(); //painel principal
+        jPanel3 = new javax.swing.JPanel(); //painel de criação de tarefa
+        jLabel1 = new javax.swing.JLabel(); //nova tarefa
+        jLabel2 = new javax.swing.JLabel(); //nome da tarefa
+        jTextField1 = new javax.swing.JTextField(); //nome da tarefa
+        jLabel3 = new javax.swing.JLabel(); //descrição
+        jScrollPane1 = new javax.swing.JScrollPane(); //descrição
+        jTextArea1 = new javax.swing.JTextArea(); //descrição  
+        jLabel4 = new javax.swing.JLabel(); //data de inicio
+        jTextField2 = new javax.swing.JTextField(); //data de inicio
+        jLabel5 = new javax.swing.JLabel(); //data de inicio
+        jTextField3 = new javax.swing.JTextField(); //data de termino
+        jButton2 = new javax.swing.JButton(); //cancelar button
+        jButton3 = new javax.swing.JButton();//create button
+        jLabel6 = new javax.swing.JLabel(); //prioridade label
+        jButton1 = new javax.swing.JButton(); //baixa button
+        jButton4 = new javax.swing.JButton(); //urgente button
+        jButton5 = new javax.swing.JButton(); //media button
+        jButton6 = new javax.swing.JButton(); //alta button    
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(960, 617));
