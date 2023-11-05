@@ -4,6 +4,10 @@ import javax.swing.JFrame;
 
 import br.com.best.model.Tarefa;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.WindowEvent;
+import java.awt.Toolkit;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -21,6 +25,11 @@ public class TaskScreen extends JFrame {
      */
     public TaskScreen() {
         initComponents();
+    }
+
+    public void close() {
+        WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
     }
 
     /**
@@ -61,14 +70,16 @@ public class TaskScreen extends JFrame {
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 4, true));
         jPanel3.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(98, 62, 218));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("NOVA TAREFA");
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14));
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nome da Tarefa");
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14));
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Descrição");
 
@@ -76,6 +87,7 @@ public class TaskScreen extends JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14));
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Data de Início");
 
@@ -85,6 +97,7 @@ public class TaskScreen extends JFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14));
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Data de Término");
 
@@ -112,6 +125,7 @@ public class TaskScreen extends JFrame {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14));
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Prioridade");
 
@@ -249,11 +263,27 @@ public class TaskScreen extends JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         String nomeTask = jTextField1.getText();
         String descricaoTask = jTextArea1.getText();
+        // Date dataInicioTask = jTextField2.getText();
+        // Date dataFimTask = jTextField3.getText();
           
         Tarefa teste = new Tarefa();
         teste.setName(nomeTask);
+        teste.setDescription(descricaoTask);
+        teste.setStartDate(dataInicioTask);
+        teste.setEndDate(dataFimTask);
+        
         String nome = teste.getName();
+        String descricao = teste.getDescription();
+        Date dataInicio = teste.getStartDate();
+        Date dataFim = teste.getEndDate();
+
         System.out.println(nome);
+        System.out.println(descricao);
+        System.out.println(dataInicio);
+        System.out.println(dataFim);
+
+        TaskScreen n = new TaskScreen();
+        n.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
