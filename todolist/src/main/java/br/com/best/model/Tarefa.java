@@ -75,8 +75,6 @@ public class Tarefa {
         this.createdAt = createdAt;
     }*/
 
-   
-
     @Override
     public String toString() {
         return "Tarefa{" +
