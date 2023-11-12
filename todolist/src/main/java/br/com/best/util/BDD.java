@@ -6,19 +6,33 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
+import java.time.LocalDateTime;
 import br.com.best.model.Tarefa;
 import br.com.best.model.Usuario;
 
 public class BDD {
 
-    private Connection connection;
+    public void inserirUsuario(Usuario user) throws SQLException {
+        String sql = "INSERT INTO usuario (nickName, name, password) VALUES (?, ?, ?)";
 
-   
-    public void DDD(Connection connection) {
-      this.connection = connection;
+        PreparedStatement ps = BancoConect.getConexao().prepareStatement(sql);
+
+        try {
+        ps = BancoConect.getConexao().prepareStatement(sql);
+
+        ps.setString(1, user.getNickName());
+        ps.setString(2, user.getName());
+        ps.setString(3, user.getPassword());
+        ps.execute();
+        ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
+
+    /*private Connection connection;
+
 
     public void conectar(Connection connection) throws SQLException {
         this.connection = connection;
@@ -47,5 +61,11 @@ public class BDD {
         //preparedStatement.setDate(5, tarefa.getCreatedAt());
         preparedStatement.executeUpdate();
     }
+
+    public ResultSet listaTarefas() throws SQLException {
+        String sql = "SELECT * FROM tarefas";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        return preparedStatement.executeQuery();
+    }*/
 
 }

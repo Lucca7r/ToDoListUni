@@ -269,18 +269,18 @@ public class TaskScreen extends JFrame {
         Tarefa teste = new Tarefa();
         teste.setName(nomeTask);
         teste.setDescription(descricaoTask);
-        teste.setStartDate(dataInicioTask);
-        teste.setEndDate(dataFimTask);
+        //teste.setStartDate(dataInicioTask);
+        //teste.setEndDate(dataFimTask);
         
         String nome = teste.getName();
         String descricao = teste.getDescription();
-        Date dataInicio = teste.getStartDate();
-        Date dataFim = teste.getEndDate();
+        //Date dataInicio = teste.getStartDate();
+        //Date dataFim = teste.getEndDate();
 
         System.out.println(nome);
         System.out.println(descricao);
-        System.out.println(dataInicio);
-        System.out.println(dataFim);
+        //System.out.println(dataInicio);
+        //System.out.println(dataFim);
 
         TaskScreen n = new TaskScreen();
         n.setVisible(true);
