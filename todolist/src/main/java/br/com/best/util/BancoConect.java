@@ -3,26 +3,31 @@ package br.com.best.util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class BancoConect {
-    private static final String URL = "jdbc:postgres://isabelle.db.elephantsql.com/ykmjoobw";
+    private static final String URL = "jdbc:postgresql://isabelle.db.elephantsql.com/ykmjoobw";
     private static final String USUARIO = "ykmjoobw";
     private static final String SENHA = "nX-_mS31qqed0qL85JX87TRf1EQR7L97";
-    
+
     private static Connection conn;
 
-    /**
-     * @return
-     */
     public static Connection getConexao() {
         try {
-            if (conn == null) {
+            if (conn == null || conn.isClosed()) {
+
                 conn = DriverManager.getConnection(URL, USUARIO, SENHA);
+                System.out.println("conectado deu bom");
+                return conn;
             }
         } catch (SQLException e) {
+            System.out.println("Erro ao conectar com o banco de dados.");
             e.printStackTrace();
         }
+
         return conn;
+    }
+
+    public static void main(String[] args) {
+        getConexao();
     }
 }
