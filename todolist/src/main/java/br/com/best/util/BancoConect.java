@@ -13,17 +13,13 @@ public class BancoConect {
 
     public static Connection getConexao() {
         try {
-            if (conn == null || conn.isClosed()) {
-
+            if (conn == null) {
                 conn = DriverManager.getConnection(URL, USUARIO, SENHA);
-                System.out.println("conectado deu bom");
-                return conn;
             }
         } catch (SQLException e) {
             System.out.println("Erro ao conectar com o banco de dados.");
             e.printStackTrace();
         }
-
         return conn;
     }
 

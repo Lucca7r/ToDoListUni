@@ -51,7 +51,7 @@ public class BDD {
     }
 
     public ResultSet listaTarefas() throws SQLException {
-        String sql = "SELECT * FROM tarefas";
+        String sql = "SELECT * FROM tarefa";
         PreparedStatement ps = BancoConect.getConexao().prepareStatement(sql);
         return ps.executeQuery();
     }
