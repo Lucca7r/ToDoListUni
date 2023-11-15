@@ -67,13 +67,17 @@ public class Tarefa {
         this.endDate = endDate;
     }
 
-    /*public Date getCreatedAt() {
-        return Date();
-    }*/
+    /*
+     * public Date getCreatedAt() {
+     * return Date();
+     * }
+     */
 
-    /*public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }*/
+    /*
+     * public void setCreatedAt(Date createdAt) {
+     * this.createdAt = createdAt;
+     * }
+     */
 
     @Override
     public String toString() {

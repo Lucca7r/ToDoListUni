@@ -33,7 +33,7 @@ public class Usuario {
         return nickName;
     }
 
-    public void setUser(String NickName) {
+    public void setNickName(String NickName) {
         this.nickName = NickName;
     }
 
