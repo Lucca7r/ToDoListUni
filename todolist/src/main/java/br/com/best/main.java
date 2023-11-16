@@ -15,19 +15,18 @@ public class main {
   public static void main(String[] args) throws SQLException, ClassNotFoundException {
     BDD bdd = new BDD();
 
-    ResultSet resultSet = bdd.listaTarefas();
+    ResultSet resultSet = bdd.listaUsuario();
 
     while (resultSet.next()) {
-      int task_id = resultSet.getInt("task_id");
+      int user_id = resultSet.getInt("user_id");
       String name = resultSet.getString("name");
-      String description = resultSet.getString("description");
-      String priority = resultSet.getString("priority");
+      String nick_name = resultSet.getString("nick_name");
 
-      System.out.println("ID: " + task_id);
+      System.out.println("ID: " + user_id);
       System.out.println("Name: " + name);
-      System.out.println("Description: " + description);
-      System.out.println("Priority: " + priority);
+      System.out.println("nick_name: " + nick_name);
     }
+
 
     /*
      * Usuario u = new Usuario();

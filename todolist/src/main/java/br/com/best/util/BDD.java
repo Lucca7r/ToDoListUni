@@ -35,6 +35,19 @@ public class BDD {
         }
     }
 
+    public ResultSet checkUser(String nameUser) throws SQLException {
+        String sql = "SELECT nick_name, password FROM usuario WHERE nick_name = ?";
+        PreparedStatement ps = BancoConect.getConexao().prepareStatement(sql);
+        ps.setString(1, nameUser);
+        return ps.executeQuery();
+    }
+
+    
+    public ResultSet listaUsuario() throws SQLException {
+        String sql = "SELECT * FROM usuario";
+        PreparedStatement ps = BancoConect.getConexao().prepareStatement(sql);
+        return ps.executeQuery();
+    }
 
     //-------------------query sobre tarefas-------------------//
 
@@ -62,6 +75,10 @@ public class BDD {
         PreparedStatement ps = BancoConect.getConexao().prepareStatement(sql);
         return ps.executeQuery();
     }
+
+     
+
+
 }
 
 // comentado para testes
