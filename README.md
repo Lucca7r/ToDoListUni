@@ -49,4 +49,3 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
      <br>
    </span>
   </p>
-- Acesse o projeto finalizado, online(https://lucca7r.github.io/pokedex/)
