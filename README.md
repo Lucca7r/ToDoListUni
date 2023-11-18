@@ -17,7 +17,7 @@
 <br>
 
 
-# Descrição
+# 📝 Descrição
 
 Projeto desenvolvido para o trabalho final do 4 semestre do curso, usando java com um banco online postgre. para as telas foi criado com java swing, usando maven como gerenciador.
 
