@@ -1,6 +1,6 @@
 <h1 align="center"> Projeto JAVA </h1>
 
-<p align="center">Projeto desenvolvido com java e com banco postgreSQL<br/>
+<p align="center">Projeto desenvolvido com java e com banco postgreSQL<br> PROJETO AINDA EM CONSTRUÇÃO 🏗️<br/>
 </p>
 
 <p align="center">
