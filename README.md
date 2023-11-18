@@ -40,12 +40,12 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## 🫱🏽‍🫲🏾Colaboradores
   <p>
     <span>
-      [@Lorrana Nasareth](https://github.com/LorranaNS)
+     -  [@Lorrana Nasareth](https://github.com/LorranaNS)
      <br>
       <br>
     </span>
    <span>
-     [@Luan Medrado](https://github.com/LuanMedrado8)
+     -  [@Luan Medrado](https://github.com/LuanMedrado8)
      <br>
    </span>
   </p>
