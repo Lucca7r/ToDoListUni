@@ -22,12 +22,13 @@ import java.awt.Toolkit;
  *
  * @author Lorrana
  */
-public class Form1 extends javax.swing.JFrame {
+
+public class AllTasksScreen extends javax.swing.JFrame {
         public int id;
         /**
-         * Creates new form Form1
+         * Creates new form AllTasksScreen
          */
-        public Form1() {
+        public AllTasksScreen() {
                 initComponents();
         }
 
@@ -37,7 +38,7 @@ public class Form1 extends javax.swing.JFrame {
         }
 
         void userID(int id) {
-                System.out.println("Form1: " + id);
+                System.out.println("AllTasksScreen: " + id);
                 this.id = id;
         }
 
@@ -327,8 +328,9 @@ public class Form1 extends javax.swing.JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-                TaskScreen t = new TaskScreen(); // abre a tela de criação de tarefas
+                NewTaskScreen t = new NewTaskScreen(); // abre a tela de criação de tarefas
                 t.setVisible(true);
+                this.setVisible(false); // fecha a tela de tarefas
 
                 t.userID(id);
                 System.out.println("AAAA: " + id);
@@ -387,16 +389,16 @@ public class Form1 extends javax.swing.JFrame {
                                 }
                         }
                 } catch (ClassNotFoundException ex) {
-                        java.util.logging.Logger.getLogger(Form1.class.getName()).log(java.util.logging.Level.SEVERE,
+                        java.util.logging.Logger.getLogger(AllTasksScreen.class.getName()).log(java.util.logging.Level.SEVERE,
                                         null, ex);
                 } catch (InstantiationException ex) {
-                        java.util.logging.Logger.getLogger(Form1.class.getName()).log(java.util.logging.Level.SEVERE,
+                        java.util.logging.Logger.getLogger(AllTasksScreen.class.getName()).log(java.util.logging.Level.SEVERE,
                                         null, ex);
                 } catch (IllegalAccessException ex) {
-                        java.util.logging.Logger.getLogger(Form1.class.getName()).log(java.util.logging.Level.SEVERE,
+                        java.util.logging.Logger.getLogger(AllTasksScreen.class.getName()).log(java.util.logging.Level.SEVERE,
                                         null, ex);
                 } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                        java.util.logging.Logger.getLogger(Form1.class.getName()).log(java.util.logging.Level.SEVERE,
+                        java.util.logging.Logger.getLogger(AllTasksScreen.class.getName()).log(java.util.logging.Level.SEVERE,
                                         null, ex);
                 }
                 // </editor-fold>
@@ -404,7 +406,7 @@ public class Form1 extends javax.swing.JFrame {
                 /* Create and display the form */
                 java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
-                                new Form1().setVisible(true);
+                                new AllTasksScreen().setVisible(true);
                         }
                 });
 
@@ -417,11 +419,12 @@ public class Form1 extends javax.swing.JFrame {
                  * }
                  * });
                  */
+
                 jButton1.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 // Carrega a tela da classe TaksScreen
                                 System.out.println("Button clicked!");
-                                TaskScreen tasksScreen = new TaskScreen();
+                                NewTaskScreen tasksScreen = new NewTaskScreen();
                                 tasksScreen.setVisible(true);
                         }
                 });
