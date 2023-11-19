@@ -23,7 +23,7 @@ import java.awt.Toolkit;
  * @author Lorrana
  */
 public class Form1 extends javax.swing.JFrame {
-
+        public int id;
         /**
          * Creates new form Form1
          */
@@ -34,6 +34,11 @@ public class Form1 extends javax.swing.JFrame {
         public void close() {
                 WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
                 Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
+        }
+
+        void userID(int id) {
+                System.out.println("Form1: " + id);
+                this.id = id;
         }
 
         /**
@@ -322,8 +327,11 @@ public class Form1 extends javax.swing.JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-                TaskScreen t = new TaskScreen();
+                TaskScreen t = new TaskScreen(); // abre a tela de criação de tarefas
                 t.setVisible(true);
+
+                t.userID(id);
+                System.out.println("AAAA: " + id);
         }
 
         private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {// GEN-FIRST:event_jButton2ActionPerformed

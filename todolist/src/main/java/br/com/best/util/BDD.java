@@ -36,7 +36,7 @@ public class BDD {
     }
 
     public ResultSet checkUser(String nameUser) throws SQLException {
-        String sql = "SELECT nick_name, password FROM usuario WHERE nick_name = ?";
+        String sql = "SELECT nick_name, password, user_id FROM usuario WHERE nick_name = ?";
         PreparedStatement ps = BancoConect.getConexao().prepareStatement(sql);
         ps.setString(1, nameUser);
         return ps.executeQuery();
@@ -52,7 +52,7 @@ public class BDD {
     //-------------------query sobre tarefas-------------------//
 
     public void insertTarefa(Tarefa tarefa) throws SQLException {
-        String sql = "INSERT INTO tarefa (name, description, start_date, end_date) VALUES (?, ?, ?, ? )";
+        String sql = "INSERT INTO tarefa (name, description, start_date, end_date, user_id) VALUES (?, ?, ?, ?, ? )";
 
         PreparedStatement ps = BancoConect.getConexao().prepareStatement(sql);
 
@@ -63,6 +63,7 @@ public class BDD {
             ps.setString(2, tarefa.getDescription());
             ps.setDate(3, tarefa.getStartDate());
             ps.setDate(4, tarefa.getEndDate());
+            ps.setInt(5, tarefa.getUserId());
             ps.execute();
             ps.close();
         } catch (SQLException e) {

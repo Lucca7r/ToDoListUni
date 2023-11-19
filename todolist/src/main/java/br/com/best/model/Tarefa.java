@@ -11,6 +11,15 @@ public class Tarefa {
     private Date startDate;
     private Date endDate;
     private Date createdAt;
+    private int userId;
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
     public Tarefa() {
     }
@@ -18,7 +27,7 @@ public class Tarefa {
     // criação do construtor
 
     public Tarefa(Long taksId, String name, String description, Date startDate, Date endDate,
-            Date createdAt) {
+            Date createdAt, int userId) {
         this.taksId = taksId;
         this.name = name;
         this.description = description;
