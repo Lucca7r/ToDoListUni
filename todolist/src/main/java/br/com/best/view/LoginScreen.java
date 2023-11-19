@@ -22,8 +22,6 @@ import java.util.*;
 
  */
 
-
-
 public class LoginScreen extends javax.swing.JFrame {
 
         public int id;
@@ -221,7 +219,7 @@ public class LoginScreen extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "Deu tudo certo!", "Sucesso",
                                         JOptionPane.INFORMATION_MESSAGE);
 
-                        Form1 f = new Form1();
+                        AllTasksScreen f = new AllTasksScreen();
                         f.setVisible(true); // abre a tela com todas as tarefas do usuário
                         this.setVisible(false); // fecha a tela de login
 
@@ -234,7 +232,7 @@ public class LoginScreen extends javax.swing.JFrame {
                 }
 
         }
-
+        
         private boolean checkIfUserExists(String nameUser, String tPassword) throws SQLException {
                 BDD bdd = new BDD();
                 ResultSet resultSet = bdd.listaUsuario();
@@ -305,7 +303,7 @@ public class LoginScreen extends javax.swing.JFrame {
                         }
                 });
         }
-
+        
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton jButton74;
         private javax.swing.JLabel jLabel73;

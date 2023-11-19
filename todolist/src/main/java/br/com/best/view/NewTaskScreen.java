@@ -19,12 +19,12 @@ import java.awt.Toolkit;
  *
  * @author Lorrana
  */
-public class TaskScreen extends JFrame {
+public class NewTaskScreen extends JFrame {
         public int id;
         /**
          * Creates new form TaskScreen
          */
-        public TaskScreen() {
+        public NewTaskScreen() {
                 initComponents();
         }
 
@@ -349,6 +349,12 @@ public class TaskScreen extends JFrame {
                 newTask.setUserId(id);
 
                 new BDD().insertTarefa(newTask);
+                this.setVisible(false); // fecha a tela de criação de tarefas
+
+                AllTasksScreen f = new AllTasksScreen(); // cria a tela de tarefas
+                f.setVisible(true); // abre a tela de tarefas
+
+                f.userID(id);
         }
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
@@ -377,19 +383,19 @@ public class TaskScreen extends JFrame {
                                 }
                         }
                 } catch (ClassNotFoundException ex) {
-                        java.util.logging.Logger.getLogger(TaskScreen.class.getName()).log(
+                        java.util.logging.Logger.getLogger(NewTaskScreen.class.getName()).log(
                                         java.util.logging.Level.SEVERE, null,
                                         ex);
                 } catch (InstantiationException ex) {
-                        java.util.logging.Logger.getLogger(TaskScreen.class.getName()).log(
+                        java.util.logging.Logger.getLogger(NewTaskScreen.class.getName()).log(
                                         java.util.logging.Level.SEVERE, null,
                                         ex);
                 } catch (IllegalAccessException ex) {
-                        java.util.logging.Logger.getLogger(TaskScreen.class.getName()).log(
+                        java.util.logging.Logger.getLogger(NewTaskScreen.class.getName()).log(
                                         java.util.logging.Level.SEVERE, null,
                                         ex);
                 } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                        java.util.logging.Logger.getLogger(TaskScreen.class.getName()).log(
+                        java.util.logging.Logger.getLogger(NewTaskScreen.class.getName()).log(
                                         java.util.logging.Level.SEVERE, null,
                                         ex);
                 }
@@ -398,7 +404,7 @@ public class TaskScreen extends JFrame {
                 /* Create and display the form */
                 java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
-                                new TaskScreen().setVisible(true);
+                                new NewTaskScreen().setVisible(true);
                         }
                 });
         }
