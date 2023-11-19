@@ -8,6 +8,8 @@ import javax.swing.JOptionPane;
 
 import br.com.best.model.Usuario;
 import br.com.best.util.BDD;
+import java.util.*;
+import java.util.*;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -17,9 +19,14 @@ import br.com.best.util.BDD;
 /**
  *
  * @author Lorrana
+
  */
+
+
+
 public class LoginScreen extends javax.swing.JFrame {
 
+        public int id;
         /**
          * Creates new form LoginScreen
          */
@@ -215,7 +222,11 @@ public class LoginScreen extends javax.swing.JFrame {
                                         JOptionPane.INFORMATION_MESSAGE);
 
                         Form1 f = new Form1();
-                        f.setVisible(true);
+                        f.setVisible(true); // abre a tela com todas as tarefas do usuário
+                        this.setVisible(false); // fecha a tela de login
+
+                        f.userID(id);
+
                         return;
                 } else {
                         JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!", "Erro",
@@ -236,6 +247,7 @@ public class LoginScreen extends javax.swing.JFrame {
                                         String password2 = resultSet2.getString("password");
                                         if (tPassword.equals(password2)) {
                                                 System.out.println("Senha correta");
+                                                id = resultSet2.getInt("user_id");
                                                 return true;
                                         }
                                         System.out.println("Senha incorreta");
