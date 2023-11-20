@@ -25,6 +25,7 @@ public class Usuario {
         return userId;
     }
 
+    
     public void setUserId(int userId) {
         this.userId = userId;
     }
@@ -32,6 +33,7 @@ public class Usuario {
     public String getNickName() {
         return nickName;
     }
+
 
     public void setNickName(String NickName) {
         this.nickName = NickName;

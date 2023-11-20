@@ -271,6 +271,11 @@ public class SignUpScreen extends javax.swing.JFrame {
                 
 
                 JOptionPane.showMessageDialog(null, "Deu tudo certo!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                LoginScreen l = new LoginScreen();
+                        l.setVisible(true); // abre a tela de login
+                        this.setVisible(false); // fecha a tela de cadastro
+
+                        
 
         }
 
