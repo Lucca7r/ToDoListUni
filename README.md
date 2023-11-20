@@ -27,7 +27,7 @@ Projeto desenvolvido para o trabalho final do 4 semestre do curso, usando java c
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - Java SWING e JDBC
-- Mavin
+- Maven
 - PostgreSQL
 - Git e Github
 
