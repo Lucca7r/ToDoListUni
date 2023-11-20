@@ -10,6 +10,43 @@ public class Tarefa {
     private String description;
     private Date startDate;
     private Date endDate;
+    private String priority;
+    public String getPriority() {
+        return priority;
+    }
+
+    
+    public Tarefa() {
+    }
+    
+    // criação do construtor
+    
+    public Tarefa(Long taksId, String name, String description, Date startDate, Date endDate,
+    Date createdAt, int userId) {
+        this.taksId = taksId;
+        this.name = name;
+        this.description = description;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.createdAt = createdAt;
+    }
+    
+    public Long getTarefaId() {
+        return taksId;
+    }
+    
+    public void setTarefaId(Long taksId) {
+        this.taksId = taksId;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
+
     private Date createdAt;
     private int userId;
 
@@ -19,33 +56,6 @@ public class Tarefa {
 
     public void setUserId(int userId) {
         this.userId = userId;
-    }
-
-    public Tarefa() {
-    }
-
-    // criação do construtor
-
-    public Tarefa(Long taksId, String name, String description, Date startDate, Date endDate,
-            Date createdAt, int userId) {
-        this.taksId = taksId;
-        this.name = name;
-        this.description = description;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.createdAt = createdAt;
-    }
-
-    public Long getTarefaId() {
-        return taksId;
-    }
-
-    public void setTarefaId(Long taksId) {
-        this.taksId = taksId;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setName(String name) {

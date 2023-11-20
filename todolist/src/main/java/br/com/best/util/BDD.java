@@ -52,7 +52,7 @@ public class BDD {
     //-------------------query sobre tarefas-------------------//
 
     public void insertTarefa(Tarefa tarefa) throws SQLException {
-        String sql = "INSERT INTO tarefa (name, description, start_date, end_date, user_id) VALUES (?, ?, ?, ?, ? )";
+        String sql = "INSERT INTO tarefa (name, description, start_date, end_date, user_id, priority) VALUES (?, ?, ?, ?, ?, ? )";
 
         PreparedStatement ps = BancoConect.getConexao().prepareStatement(sql);
 
@@ -64,6 +64,7 @@ public class BDD {
             ps.setDate(3, tarefa.getStartDate());
             ps.setDate(4, tarefa.getEndDate());
             ps.setInt(5, tarefa.getUserId());
+            ps.setString(6, tarefa.getPriority());
             ps.execute();
             ps.close();
         } catch (SQLException e) {

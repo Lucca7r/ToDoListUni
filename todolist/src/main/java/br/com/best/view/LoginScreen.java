@@ -207,7 +207,7 @@ public class LoginScreen extends javax.swing.JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
         private void jTextField38ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextField38ActionPerformed
-                // TODO add your handling code here:
+                
         }// GEN-LAST:event_jTextField38ActionPerformed
 
         private void jButton74ActionPerformed(java.awt.event.ActionEvent evt) throws HeadlessException, SQLException {// GEN-FIRST:event_jButton74ActionPerformed
@@ -249,6 +249,7 @@ public class LoginScreen extends javax.swing.JFrame {
                                                 return true;
                                         }
                                         System.out.println("Senha incorreta");
+                                       
                                 }
                         }
                 }

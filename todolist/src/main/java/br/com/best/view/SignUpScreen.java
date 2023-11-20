@@ -19,14 +19,21 @@ import br.com.best.util.BDD;
  * @author Lorrana
  */
 public class SignUpScreen extends javax.swing.JFrame {
+        public int id;
 
         /**
          * Creates new form SignUpScreen
          */
+
+
         public SignUpScreen() {
                 initComponents();
         }
 
+        void userID(int id) {
+                System.out.println("new user: " + id);
+                this.id = id;
+        }
         /**
          * This method is called from within the constructor to initialize the form.
          * WARNING: Do NOT modify this code. The content of this method is always
@@ -260,6 +267,8 @@ public class SignUpScreen extends javax.swing.JFrame {
                 newUser.setPassword(passwordUser);
 
                 new BDD().inserirUsuario(newUser);
+
+                
 
                 JOptionPane.showMessageDialog(null, "Deu tudo certo!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
 
