@@ -1,6 +1,7 @@
 package br.com.best.view;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import br.com.best.model.Tarefa;
 import br.com.best.util.BDD;
@@ -350,6 +351,10 @@ public class NewTaskScreen extends JFrame {
         }// GEN-LAST:event_jTextField2ActionPerformed
 
         private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
+
+                        AllTasksScreen a = new AllTasksScreen();
+                        a.setVisible(true); // Botão Cancelar volta para tela de tarefas
+                        this.setVisible(false); 
 
         }// GEN-LAST:event_jButton2ActionPerformed
 
