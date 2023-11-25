@@ -25,7 +25,6 @@ public class SignUpScreen extends javax.swing.JFrame {
          * Creates new form SignUpScreen
          */
 
-
         public SignUpScreen() {
                 initComponents();
         }
@@ -34,6 +33,7 @@ public class SignUpScreen extends javax.swing.JFrame {
                 System.out.println("new user: " + id);
                 this.id = id;
         }
+
         /**
          * This method is called from within the constructor to initialize the form.
          * WARNING: Do NOT modify this code. The content of this method is always
@@ -268,8 +268,6 @@ public class SignUpScreen extends javax.swing.JFrame {
 
                 new BDD().inserirUsuario(newUser);
 
-                
-
                 JOptionPane.showMessageDialog(null, "Deu tudo certo!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
 
         }
@@ -279,7 +277,7 @@ public class SignUpScreen extends javax.swing.JFrame {
                 ResultSet resultSet = bdd.listaUsuario();
                 while (resultSet.next()) {
                         String nick_name = resultSet.getString("nick_name");
-                        
+
                         if (nameUser.equals(nick_name)) {
                                 return true;
                         }

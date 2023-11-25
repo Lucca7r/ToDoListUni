@@ -76,9 +76,7 @@ public class BDD {
         String sql = "SELECT * FROM tarefa";
         PreparedStatement ps = BancoConect.getConexao().prepareStatement(sql);
         return ps.executeQuery();
-    }
-
-     
+    }     
 
 
 }
