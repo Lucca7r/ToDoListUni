@@ -15,7 +15,7 @@ import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
 
 import br.com.best.util.BDD;
-import javafx.scene.paint.Color;
+//import javax.scene.paint.Color;
 import java.sql.SQLException;
 
 /**
@@ -36,8 +36,8 @@ public class exemplo extends JFrame {
     }
 
     void userID(int id) {
-            System.out.println("AllTasksScreen: " + id);
-            this.id = id;
+        System.out.println("AllTasksScreen: " + id);
+        this.id = id;
     }
 
     public static void createAndShowGUI() {
@@ -152,24 +152,24 @@ public class exemplo extends JFrame {
     }
 
     public void printarTarefas() {
-    BDD bdd = new BDD();
-    try {
-        ResultSet resultSet = bdd.listaTarefas(4);
-        if (resultSet != null) {
-            while (resultSet.next()) {
-                String name = resultSet.getString("name");
-                String startDate = resultSet.getString("start_date");
-                String endDate = resultSet.getString("end_date");
-                String priority = resultSet.getString("priority");
+        BDD bdd = new BDD();
+        try {
+            ResultSet resultSet = bdd.listaTarefas(4);
+            if (resultSet != null) {
+                while (resultSet.next()) {
+                    String name = resultSet.getString("name");
+                    String startDate = resultSet.getString("start_date");
+                    String endDate = resultSet.getString("end_date");
+                    String priority = resultSet.getString("priority");
 
-                panel.add(new subPanel(startDate, endDate, name, priority));
-                myFrame.pack();
+                    panel.add(new subPanel(startDate, endDate, name, priority));
+                    myFrame.pack();
+                }
             }
-        }
 
-    } catch (SQLException ex) {
-        ex.printStackTrace();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return;
     }
-    return;
-}
 }
