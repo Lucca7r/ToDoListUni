@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 import br.com.best.model.Usuario;
 import br.com.best.util.BDD;
@@ -19,12 +21,13 @@ import java.util.*;
 /**
  *
  * @author Lorrana
-
+ * 
  */
 
 public class LoginScreen extends javax.swing.JFrame {
 
         public int id;
+
         /**
          * Creates new form LoginScreen
          */
@@ -219,11 +222,17 @@ public class LoginScreen extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "Deu tudo certo!", "Sucesso",
                                         JOptionPane.INFORMATION_MESSAGE);
 
-                        AllTasksScreen f = new AllTasksScreen();
-                        f.setVisible(true); // abre a tela com todas as tarefas do usuário
-                        this.setVisible(false); // fecha a tela de login
+                        // AllTasksScreen f = new AllTasksScreen();
+                        // f.setVisible(true); // abre a tela com todas as tarefas do usuário
+                        // this.setVisible(false); // fecha a tela de login
 
-                        f.userID(id);
+                        // f.userID(id);
+
+                        SwingUtilities.invokeLater(() -> {
+                                exemplo.createAndShowGUI();
+                        });
+
+                        this.setVisible(false); // close the login screen
 
                         return;
                 } else {
@@ -232,14 +241,25 @@ public class LoginScreen extends javax.swing.JFrame {
                 }
 
         }
-        
+
         private boolean checkIfUserExists(String nameUser, String tPassword) throws SQLException {
                 BDD bdd = new BDD();
                 ResultSet resultSet = bdd.listaUsuario();
                 while (resultSet.next()) {
-                        String name = resultSet.getString("nick_name");
+                        String nick_name = resultSet.getString("nick_name");
 
-                        
+                        if (nameUser.equals(nick_name)) {
+                                ResultSet resultSet2 = bdd.checkUser(nameUser);
+                                while (resultSet2.next()) {
+                                        String password2 = resultSet2.getString("password");
+                                        if (tPassword.equals(password2)) {
+                                                System.out.println("Senha correta");
+                                                id = resultSet2.getInt("user_id");
+                                                return true;
+                                        }
+                                        System.out.println("Senha incorreta");
+                                }
+                        }
                 }
                 System.out.println("Usuário não existe");
                 return false;
@@ -292,7 +312,7 @@ public class LoginScreen extends javax.swing.JFrame {
                         }
                 });
         }
-        
+
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton jButton74;
         private javax.swing.JLabel jLabel73;
