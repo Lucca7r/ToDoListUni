@@ -237,20 +237,9 @@ public class LoginScreen extends javax.swing.JFrame {
                 BDD bdd = new BDD();
                 ResultSet resultSet = bdd.listaUsuario();
                 while (resultSet.next()) {
-                        String nick_name = resultSet.getString("nick_name");
+                        String name = resultSet.getString("nick_name");
 
-                        if (nameUser.equals(nick_name)) {
-                                ResultSet resultSet2 = bdd.checkUser(nameUser);
-                                while (resultSet2.next()) {
-                                        String password2 = resultSet2.getString("password");
-                                        if (tPassword.equals(password2)) {
-                                                System.out.println("Senha correta");
-                                                id = resultSet2.getInt("user_id");
-                                                return true;
-                                        }
-                                        System.out.println("Senha incorreta");
-                                }
-                        }
+                        
                 }
                 System.out.println("Usuário não existe");
                 return false;

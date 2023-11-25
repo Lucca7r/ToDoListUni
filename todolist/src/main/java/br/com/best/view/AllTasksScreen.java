@@ -334,6 +334,7 @@ public class AllTasksScreen extends javax.swing.JFrame {
 
                 t.userID(id);
                 System.out.println("AAAA: " + id);
+                
         }
 
         private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {// GEN-FIRST:event_jButton2ActionPerformed
@@ -341,7 +342,7 @@ public class AllTasksScreen extends javax.swing.JFrame {
 
                 BDD bdd = new BDD();
 
-                ResultSet resultSet = bdd.listaTarefas();
+                ResultSet resultSet = bdd.listaTarefas(4);
 
                 while (resultSet.next()) {
                         String name = resultSet.getString("name");
