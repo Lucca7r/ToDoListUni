@@ -25,7 +25,6 @@ public class SignUpScreen extends javax.swing.JFrame {
          * Creates new form SignUpScreen
          */
 
-
         public SignUpScreen() {
                 initComponents();
         }
@@ -34,6 +33,7 @@ public class SignUpScreen extends javax.swing.JFrame {
                 System.out.println("new user: " + id);
                 this.id = id;
         }
+
         /**
          * This method is called from within the constructor to initialize the form.
          * WARNING: Do NOT modify this code. The content of this method is always
@@ -252,14 +252,14 @@ public class SignUpScreen extends javax.swing.JFrame {
         private void jButton74ActionPerformed(java.awt.event.ActionEvent evt)
                         throws ClassNotFoundException, SQLException {
 
-                String nameUser = jTextField37.getText();
-                String nickName = jTextField38.getText();
-                String passwordUser = jTextField39.getText();
-
-                if (checkIfUserExists(nameUser)) {
-                        JOptionPane.showMessageDialog(null, "Usuário já existe!", "Erro", JOptionPane.ERROR_MESSAGE);
-                        return;
-                }
+                                
+                                String nameUser = jTextField37.getText();
+                                String nickName = jTextField38.getText();
+                                String passwordUser = jTextField39.getText();
+                                if (checkIfUserExists(nickName)) {
+                                        JOptionPane.showMessageDialog(null, "Usuário já existe!", "Erro", JOptionPane.ERROR_MESSAGE);
+                                        return;
+                                }
 
                 Usuario newUser = new Usuario();
                 newUser.setName(nameUser);
@@ -269,22 +269,16 @@ public class SignUpScreen extends javax.swing.JFrame {
                 new BDD().inserirUsuario(newUser);
 
                 
-
                 JOptionPane.showMessageDialog(null, "Deu tudo certo!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-                LoginScreen l = new LoginScreen();
-                        l.setVisible(true); // abre a tela de login
-                        this.setVisible(false); // fecha a tela de cadastro
-
-                        
-
         }
 
         private boolean checkIfUserExists(String nameUser) throws SQLException {
                 BDD bdd = new BDD();
                 ResultSet resultSet = bdd.listaUsuario();
                 while (resultSet.next()) {
+
                         String nick_name = resultSet.getString("nick_name");
-                        
+
                         if (nameUser.equals(nick_name)) {
                                 return true;
                         }

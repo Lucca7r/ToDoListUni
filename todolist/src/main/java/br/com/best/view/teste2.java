@@ -1,9 +1,10 @@
-
 package br.com.best.view;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -12,72 +13,56 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
-
 import br.com.best.model.Tarefa;
-import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.List;
 
-// import javafx.scene.paint.Color;
 
-/**
- *
- * @web http://java-buddy.blogspot.com/
- */
-public class exemplo extends JFrame {
 
-    static exemplo myFrame;
+
+
+public class teste2 extends JFrame {
+
+    static teste2 myFrame;
     static int countMe = 0;
     JScrollPane mainPanel;
 
-    public static void main(String[] args) {
-      teste();
-        SwingUtilities.invokeLater(() -> {
-            createAndShowGUI();
-        });
-    }
 
-    private static void createAndShowGUI() {
-        myFrame = new exemplo();
+    public static void main(String[] args) {
+        
+          SwingUtilities.invokeLater(() -> {
+              createAndShowGUI();
+          });
+      }
+      
+      private static void createAndShowGUI() {
+        myFrame = new teste2();
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         myFrame.prepareUI();
         myFrame.pack();
         myFrame.setVisible(true);
     }
 
+
     private void prepareUI() {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        JButton buttonAdd = new JButton("Add subPanel");
+        JButton buttonAdd = new JButton("Atualizar Tarefas");
         buttonAdd.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
-                for(int i = 0; i < 10; i++){
+                List<Tarefa> tarefas = listaTarefas();
 
-                    myFrame.pack();
-                    panel.add(new subPanel(new Tarefa("teste", "teste", "teste", "teste", "teste", "teste", 1)));
+                // Limpa o painel antes de adicionar novas tarefas
+                panel.removeAll();
+
+                // Adiciona subpainéis com as novas tarefas
+                for (Tarefa tarefa : tarefas) {
+                    panel.add(new SubPanel(tarefa));
                 }
             }
         });
-
-        JButton buttonAddTarefa = new JButton("Criar Tarefa");
-
-        // JButton buttonRemoveAll = new JButton("Remove All");
-        // buttonRemoveAll.addActionListener(new ActionListener() {
-
-        //     @Override
-        //     public void actionPerformed(ActionEvent e) {
-        //         panel.removeAll();
-        //         myFrame.pack();
-        //     }
-        // });
-
-        mainPanel = new JScrollPane(panel);
-
-        getContentPane().add(mainPanel, BorderLayout.CENTER);
-        getContentPane().add(buttonAdd, BorderLayout.PAGE_START);
-        getContentPane().add(buttonAddTarefa, BorderLayout.PAGE_END);
-        // getContentPane().add(buttonRemoveAll, BorderLayout.PAGE_END);
     }
 
     private class subPanel extends JPanel {
@@ -148,15 +133,19 @@ public class exemplo extends JFrame {
             );
         }
     }
-    
 
-    public static void teste() {
+    private List<Tarefa> listaTarefas() {
+        // Implement your logic to retrieve the list of tasks
+        return null;
+    }
 
-        int quant = 5;
+    private class SubPanel extends JPanel {
 
-        // for (int i = 0; i < quant ; i++){
-        //    panel.add(new subPanel());
-        //         myFrame.pack();
-        // }
-    } 
+        public SubPanel(Tarefa tarefa) {
+        }
+        // Implement your SubPanel logic here
+    }
+
+
 }
+

@@ -224,6 +224,18 @@ public class LoginScreen extends javax.swing.JFrame {
                         this.setVisible(false); // fecha a tela de login
 
                         f.userID(id);
+                        BDD bdd = new BDD();
+                        ResultSet resultSet = bdd.listaTarefas(id);
+                                
+                        while (resultSet.next()) {
+                                int user_id = resultSet.getInt("user_id");
+                                String name = resultSet.getString("name");
+                                String description = resultSet.getString("description");
+                          
+                                System.out.println("ID: " + user_id);
+                                System.out.println("Name: " + name);
+                                System.out.println("description: " + description);
+                              }
 
                         return;
                 } else {

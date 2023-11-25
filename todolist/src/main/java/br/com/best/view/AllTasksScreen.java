@@ -341,7 +341,7 @@ public class AllTasksScreen extends javax.swing.JFrame {
 
                 BDD bdd = new BDD();
 
-                ResultSet resultSet = bdd.listaTarefas();
+                ResultSet resultSet = bdd.listaTarefas(id);
 
                 while (resultSet.next()) {
                         String name = resultSet.getString("name");

@@ -14,17 +14,20 @@ import br.com.best.util.BDD;
 public class main {
   public static void main(String[] args) throws SQLException, ClassNotFoundException {
     BDD bdd = new BDD();
+    int id = 4;
 
-    ResultSet resultSet = bdd.listaUsuario();
+    ResultSet resultSet = bdd.listaTarefas(id);
 
     while (resultSet.next()) {
       int user_id = resultSet.getInt("user_id");
       String name = resultSet.getString("name");
-      String nick_name = resultSet.getString("nick_name");
+      String description = resultSet.getString("description");
 
       System.out.println("ID: " + user_id);
       System.out.println("Name: " + name);
-      System.out.println("nick_name: " + nick_name);
+      System.out.println("description: " + description);
+
+      
     }
 
 
