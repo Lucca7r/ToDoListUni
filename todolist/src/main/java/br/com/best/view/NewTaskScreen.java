@@ -34,8 +34,8 @@ public class NewTaskScreen extends JFrame {
         }
 
         void userID(int id) {
-                System.out.println("CRIAR TAREFA: " + id);
                 this.id = id;
+                System.out.println("CRIAR TAREFA: " + id);
         }
 
         /**

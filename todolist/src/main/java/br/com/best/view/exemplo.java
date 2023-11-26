@@ -23,11 +23,12 @@ import java.sql.SQLException;
  * @web http://java-buddy.blogspot.com/
  */
 public class exemplo extends JFrame {
-    public int id;
+    public static int id;
     static exemplo myFrame;
     static int countMe = 0;
     JScrollPane mainPanel;
     JPanel panel = new JPanel();
+
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
@@ -35,9 +36,9 @@ public class exemplo extends JFrame {
         });
     }
 
-    void userID(int id) {
-        System.out.println("AllTasksScreen: " + id);
+    public void userID(int id) {
         this.id = id;
+        System.out.println("exemplo: " + id);
     }
 
     public static void createAndShowGUI() {
@@ -62,18 +63,20 @@ public class exemplo extends JFrame {
         buttonAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         buttonAdd.addActionListener(new ActionListener() {
-            @Override
+            //@Override
             public void actionPerformed(ActionEvent e) {
-                NewTaskScreen t = new NewTaskScreen(); // abre a tela de criação de tarefas
-                t.setVisible(true);
-                this.setVisible(false); // fecha a tela de tarefas
+                System.out.println("id dentro do bot: " + id);
 
-                t.userID(id);
-                System.out.println("AAAA: " + id);
+                
+                NewTaskScreen telaTask = new NewTaskScreen(); // abre a tela de criação de tarefas
+                telaTask.setVisible(true);
+                setVisible(false); // fecha a tela de tarefas
+
+                telaTask.userID(id);
             }
 
-            private void setVisible(boolean b) {
-            }
+            // private void setVisible(boolean b) {
+            // }
         });
 
         mainPanel = new JScrollPane(panel);
