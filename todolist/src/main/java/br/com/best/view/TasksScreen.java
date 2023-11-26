@@ -1,13 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package br.com.best.view;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -35,8 +32,6 @@ public class TasksScreen extends javax.swing.JFrame {
         }
 
         @SuppressWarnings("unchecked")
-        // <editor-fold defaultstate="collapsed" desc="Generated
-        // Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
                 jPanel1 = new javax.swing.JPanel();
@@ -75,6 +70,7 @@ public class TasksScreen extends javax.swing.JFrame {
                 jLabel1.setText("GERENCIADOR DE TAREFAS");
                 jLabel1.setToolTipText("");
                 jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+                
 
                 javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
                 jPanel1.setLayout(jPanel1Layout);
@@ -137,9 +133,9 @@ public class TasksScreen extends javax.swing.JFrame {
 
                 pack();
                 
-                System.out.println("teste:" + id);
-                printarTarefas(id);
-        }// </editor-fold>//GEN-END:initComponents
+                // System.out.println("teste:" + id);
+                // printarTarefas(id);
+        }
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
                  NewTaskScreen e = new NewTaskScreen();
@@ -178,9 +174,7 @@ public class TasksScreen extends javax.swing.JFrame {
                                         java.util.logging.Level.SEVERE, null,
                                         ex);
                 }
-                // </editor-fold>
 
-                /* Create and display the form */
                 java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
                                 TasksScreen tasksScreen = new TasksScreen(id);
@@ -222,6 +216,14 @@ public class TasksScreen extends javax.swing.JFrame {
                         labelPrioridade.setText("labelPrioridade");
                         labelPrioridade.setText(priority);
 
+                        JButton deleteButton = new javax.swing.JButton();
+                        deleteButton.setText("Delete");
+                        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                // handle delete action here
+                        }
+                        });
+
                         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
                         this.setLayout(layout);
                         layout.setHorizontalGroup(
@@ -244,6 +246,7 @@ public class TasksScreen extends javax.swing.JFrame {
                                                                                                                                         javax.swing.GroupLayout.Alignment.LEADING)
                                                                                                                         .addComponent(labelDataTermino)
                                                                                                                         .addComponent(labelDataInicio))
+                                                                                                                        .addComponent(deleteButton)
                                                                                                         .addGap(0, 0, Short.MAX_VALUE)))
                                                                         .addContainerGap()));
                         layout.setVerticalGroup(
@@ -254,6 +257,7 @@ public class TasksScreen extends javax.swing.JFrame {
                                                                                         javax.swing.GroupLayout.Alignment.BASELINE)
                                                                                         .addComponent(checkboxTarefa)
                                                                                         .addComponent(labelPrioridade))
+                                                                                        .addComponent(deleteButton)
                                                                         .addPreferredGap(
                                                                                         javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                         .addComponent(labelDataInicio)
