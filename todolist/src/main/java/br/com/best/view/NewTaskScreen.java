@@ -1,6 +1,7 @@
 package br.com.best.view;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import br.com.best.model.Tarefa;
 import br.com.best.util.BDD;
@@ -20,7 +21,9 @@ import java.awt.Toolkit;
  * @author Lorrana
  */
 public class NewTaskScreen extends JFrame {
-        public int id;
+        public static int id;
+        public String priority;
+
         /**
          * Creates new form TaskScreen
          */
@@ -66,7 +69,7 @@ public class NewTaskScreen extends JFrame {
                 jButton1 = new javax.swing.JButton(); // baixa button
                 jButton4 = new javax.swing.JButton(); // urgente button
                 jButton5 = new javax.swing.JButton(); // media button
-                jButton6 = new javax.swing.JButton(); // alta button
+                jButton6 = new javax.swing.JButton(); // urgente button
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
                 setPreferredSize(new java.awt.Dimension(960, 617));
@@ -154,13 +157,30 @@ public class NewTaskScreen extends JFrame {
                 jButton4.setForeground(new java.awt.Color(0, 0, 0));
                 jButton4.setLabel("Urgente");
 
+                jButton4.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jButton4ActionPerformed(evt);
+                        }
+                });
+
                 jButton5.setBackground(new java.awt.Color(255, 247, 87));
                 jButton5.setForeground(new java.awt.Color(0, 0, 0));
                 jButton5.setLabel("Média");
 
+                jButton5.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jButton5ActionPerformed(evt);
+                        }
+                });
+
                 jButton6.setBackground(new java.awt.Color(253, 152, 0));
                 jButton6.setForeground(new java.awt.Color(0, 0, 0));
                 jButton6.setLabel("Alta");
+                jButton6.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jButton6ActionPerformed(evt);
+                        }
+                });
 
                 javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
                 jPanel3.setLayout(jPanel3Layout);
@@ -327,11 +347,15 @@ public class NewTaskScreen extends JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
         private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextField2ActionPerformed
-                // TODO add your handling code here:
+
         }// GEN-LAST:event_jTextField2ActionPerformed
 
         private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
-                // TODO add your handling code here:
+
+                        TasksScreen a = new TasksScreen();
+                        a.setVisible(true); // Botão Cancelar volta para tela de tarefas
+                        this.setVisible(false); 
+
         }// GEN-LAST:event_jButton2ActionPerformed
 
         private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {// GEN-FIRST:event_jButton3ActionPerformed
@@ -347,20 +371,39 @@ public class NewTaskScreen extends JFrame {
                 newTask.setStartDate(java.sql.Date.valueOf(startDateTask));
                 newTask.setEndDate(java.sql.Date.valueOf(endDateTask));
                 newTask.setUserId(id);
+                newTask.setPriority(priority);
 
                 new BDD().insertTarefa(newTask);
-                this.setVisible(false); // fecha a tela de criação de tarefas
 
-                TasksScreen t = new TasksScreen(); // cria a tela de tarefas
-                t.setVisible(true); // abre a tela de tarefas
+                priority = null;
+                // this.setVisible(false); // fecha a tela de criação de tarefas
 
-                t.userID(id);
+                // TasksScreen t = new TasksScreen(); // cria a tela de tarefas
+                // t.setVisible(true); // abre a tela de tarefas
+
+                // t.userID(id);
         }
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
-
+                priority = "baixa";
+                System.out.println("baixa");
         }
 
+        private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//
+                priority = "alta";
+                System.out.println("alta");
+        }
+
+        
+        private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//
+                priority = "media";
+        System.out.println("media");
+        }
+
+        private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//
+                priority = "urgente";
+                System.out.println("urgente");
+        }
         /**
          * @param args the command line arguments
          */

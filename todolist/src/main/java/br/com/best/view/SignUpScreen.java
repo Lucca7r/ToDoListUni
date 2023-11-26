@@ -19,12 +19,19 @@ import br.com.best.util.BDD;
  * @author Lorrana
  */
 public class SignUpScreen extends javax.swing.JFrame {
+        public int id;
 
         /**
          * Creates new form SignUpScreen
          */
+
         public SignUpScreen() {
                 initComponents();
+        }
+
+        void userID(int id) {
+                System.out.println("new user: " + id);
+                this.id = id;
         }
 
         /**
@@ -262,6 +269,11 @@ public class SignUpScreen extends javax.swing.JFrame {
                 new BDD().inserirUsuario(newUser);
 
                 JOptionPane.showMessageDialog(null, "Deu tudo certo!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                LoginScreen l = new LoginScreen();
+                        l.setVisible(true); // abre a tela de login
+                        this.setVisible(false); // fecha a tela de cadastro
+
+                        
 
         }
 
@@ -270,7 +282,7 @@ public class SignUpScreen extends javax.swing.JFrame {
                 ResultSet resultSet = bdd.listaUsuario();
                 while (resultSet.next()) {
                         String nick_name = resultSet.getString("nick_name");
-                        
+
                         if (nameUser.equals(nick_name)) {
                                 return true;
                         }
@@ -280,8 +292,7 @@ public class SignUpScreen extends javax.swing.JFrame {
 
         private void jTextField37ActionPerformed(java.awt.event.ActionEvent evt) {
 
-        }// GEN-LAST:event_jTextField37ActionPerformed
-
+        }
         /**
          * @param args the command line arguments
          */

@@ -20,7 +20,7 @@ import br.com.best.util.BDD;
  * @author Lorrana
  */
 public class TasksScreen extends javax.swing.JFrame {
-        public int id;
+        public static int id;
 
         public TasksScreen() {
                 initComponents();
@@ -136,9 +136,8 @@ public class TasksScreen extends javax.swing.JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
-        new NewTaskScreen().setVisible(true);
-        this.setVisible(false);
-    }// GEN-LAST:event_jButton1ActionPerformed
+        
+    }
 
         /**
          * @param args the command line arguments
@@ -176,7 +175,7 @@ public class TasksScreen extends javax.swing.JFrame {
                         public void run() {
                                 TasksScreen tasksScreen = new TasksScreen();
                                 tasksScreen.setVisible(true);
-                                tasksScreen.printarTarefas();
+                                tasksScreen.printarTarefas(id);
                         }
                 });
         }
@@ -257,10 +256,11 @@ public class TasksScreen extends javax.swing.JFrame {
                 }
         }
 
-        public void printarTarefas() {
+        public void printarTarefas(int id) {
                 BDD bdd = new BDD();
-                try {
-                        ResultSet resultSet = bdd.listaTarefas(4);
+                try {   
+                        System.out.println(id);
+                        ResultSet resultSet = bdd.listaTarefas(id);
                         if (resultSet != null) {
                                 while (resultSet.next()) {
                                         String name = resultSet.getString("name");
