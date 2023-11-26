@@ -256,24 +256,29 @@ public class SignUpScreen extends javax.swing.JFrame {
                 String nickName = jTextField38.getText();
                 String passwordUser = jTextField39.getText();
 
-                if (checkIfUserExists(nameUser)) {
-                        JOptionPane.showMessageDialog(null, "Usuário já existe!", "Erro", JOptionPane.ERROR_MESSAGE);
-                        return;
-                }
+                if (nameUser.isEmpty() || nickName.isEmpty() || passwordUser.isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Campo vazio",
+                                        JOptionPane.ERROR_MESSAGE);
+                } else {
+                        if (checkIfUserExists(nameUser)) {
+                                JOptionPane.showMessageDialog(null, "Usuário já existe!", "Erro",
+                                                JOptionPane.ERROR_MESSAGE);
+                                return;
+                        }
 
-                Usuario newUser = new Usuario();
-                newUser.setName(nameUser);
-                newUser.setNickName(nickName);
-                newUser.setPassword(passwordUser);
+                        Usuario newUser = new Usuario();
+                        newUser.setName(nameUser);
+                        newUser.setNickName(nickName);
+                        newUser.setPassword(passwordUser);
 
-                new BDD().inserirUsuario(newUser);
+                        new BDD().inserirUsuario(newUser);
 
-                JOptionPane.showMessageDialog(null, "Deu tudo certo!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-                LoginScreen l = new LoginScreen();
+                        JOptionPane.showMessageDialog(null, "Deu tudo certo!", "Sucesso",
+                                        JOptionPane.INFORMATION_MESSAGE);
+                        LoginScreen l = new LoginScreen();
                         l.setVisible(true); // abre a tela de login
                         this.setVisible(false); // fecha a tela de cadastro
-
-                        
+                }
 
         }
 
@@ -293,6 +298,7 @@ public class SignUpScreen extends javax.swing.JFrame {
         private void jTextField37ActionPerformed(java.awt.event.ActionEvent evt) {
 
         }
+
         /**
          * @param args the command line arguments
          */
