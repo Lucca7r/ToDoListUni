@@ -11,23 +11,20 @@ public class Tarefa {
     private Date startDate;
     private Date endDate;
     private String priority;
-    public String getPriority() {
-        return priority;
-    }
 
-    
     public Tarefa() {
     }
     
     // criação do construtor
     
     public Tarefa(Long taksId, String name, String description, Date startDate, Date endDate,
-    Date createdAt, int userId) {
+    Date createdAt, String priority, int userId) {
         this.taksId = taksId;
         this.name = name;
         this.description = description;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.priority = priority;
         this.createdAt = createdAt;
     }
     
@@ -43,10 +40,6 @@ public class Tarefa {
         return name;
     }
     
-    public void setPriority(String priority) {
-        this.priority = priority;
-    }
-
     private Date createdAt;
     private int userId;
 
@@ -86,6 +79,14 @@ public class Tarefa {
         this.endDate = endDate;
     }
 
+    public String getPriority() {
+        return priority;
+    }
+
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
+
     /*
      * public Date getCreatedAt() {
      * return Date();
@@ -106,6 +107,7 @@ public class Tarefa {
                 ", description='" + description + '\'' +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
+                ", priority=" + priority +
                 ", createdAt=" + createdAt +
                 '}';
     }

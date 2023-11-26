@@ -72,9 +72,10 @@ public class BDD {
         }
     }
 
-    public ResultSet listaTarefas() throws SQLException {
-        String sql = "SELECT * FROM tarefa";
+    public ResultSet listaTarefas(int user_id) throws SQLException {
+        String sql = "SELECT * FROM tarefa WHERE user_id = ?";
         PreparedStatement ps = BancoConect.getConexao().prepareStatement(sql);
+        ps.setInt(1, user_id);
         return ps.executeQuery();
     }     
 

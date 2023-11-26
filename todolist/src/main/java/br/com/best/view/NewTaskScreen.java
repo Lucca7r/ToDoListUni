@@ -2,6 +2,7 @@ package br.com.best.view;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 
 import br.com.best.model.Tarefa;
 import br.com.best.util.BDD;
@@ -21,7 +22,7 @@ import java.awt.Toolkit;
  * @author Lorrana
  */
 public class NewTaskScreen extends JFrame {
-        public int id;
+        public static int id;
         public String priority;
 
         /**
@@ -352,7 +353,7 @@ public class NewTaskScreen extends JFrame {
 
         private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
 
-                        AllTasksScreen a = new AllTasksScreen();
+                        TasksScreen a = new TasksScreen();
                         a.setVisible(true); // Botão Cancelar volta para tela de tarefas
                         this.setVisible(false); 
 
@@ -378,10 +379,10 @@ public class NewTaskScreen extends JFrame {
                 priority = null;
                 this.setVisible(false); // fecha a tela de criação de tarefas
 
-                AllTasksScreen f = new AllTasksScreen(); // cria a tela de tarefas
-                f.setVisible(true); // abre a tela de tarefas
+                // TasksScreen t = new TasksScreen(); // cria a tela de tarefas
+                // t.setVisible(true); // abre a tela de tarefas
 
-                f.userID(id);
+                // t.userID(id);
         }
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed

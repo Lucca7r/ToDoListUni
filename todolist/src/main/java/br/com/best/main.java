@@ -15,36 +15,38 @@ public class main {
   public static void main(String[] args) throws SQLException, ClassNotFoundException {
     BDD bdd = new BDD();
 
-    ResultSet resultSet = bdd.listaUsuario();
+    // ResultSet resultSet = bdd.listaTarefas();
 
-    while (resultSet.next()) {
-      int user_id = resultSet.getInt("user_id");
-      String name = resultSet.getString("name");
-      String nick_name = resultSet.getString("nick_name");
+    // while (resultSet.next()) {
+    //   int user_id = resultSet.getInt("user_id");
+    //   String name = resultSet.getString("name");
+    //   String nick_name = resultSet.getString("nick_name");
 
-      System.out.println("ID: " + user_id);
-      System.out.println("Name: " + name);
-      System.out.println("nick_name: " + nick_name);
-    }
+    //   System.out.println("ID: " + user_id);
+    //   System.out.println("Name: " + name);
+    //   System.out.println("nick_name: " + nick_name);
+    // }
 
 
-    /*
-     * Usuario u = new Usuario();
-     * u.setNickName("ihaaa");
-     * u.setName("ta funcionaando");
-     * u.setPassword("tarefafuncionou");
-     * 
-     * 
-     * new BDD().inserirUsuario(u);
-     * 
-     * Tarefa t = new Tarefa();
-     * 
-     * t.setName("fazer funcionar");
-     * t.setDescription("teste para funcionar");
-     * t.setStartDate(java.sql.Date.valueOf("2021-11-16"));
-     * t.setEndDate(java.sql.Date.valueOf("2023-11-16"));
-     * 
-     * new BDD().insertTarefa(t);
-     */
+    
+      // Usuario u = new Usuario();
+      // u.setNickName("ihaaa");
+      // u.setName("ta funcionaando");
+      // u.setPassword("tarefafuncionou");
+      
+      
+      // new BDD().inser(u);
+      
+      Tarefa t = new Tarefa();
+      
+      t.setName("cego");
+      t.setDescription("cego");
+      t.setStartDate(java.sql.Date.valueOf("2021-11-16"));
+      t.setEndDate(java.sql.Date.valueOf("2023-11-16"));
+      t.setUserId(3);
+      t.setPriority("alta");
+      
+      new BDD().insertTarefa(t);
+     
 }
 }

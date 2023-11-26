@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 import br.com.best.model.Usuario;
 import br.com.best.util.BDD;
@@ -19,12 +21,13 @@ import java.util.*;
 /**
  *
  * @author Lorrana
-
+ * 
  */
 
 public class LoginScreen extends javax.swing.JFrame {
 
         public int id;
+
         /**
          * Creates new form LoginScreen
          */
@@ -219,11 +222,21 @@ public class LoginScreen extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "Deu tudo certo!", "Sucesso",
                                         JOptionPane.INFORMATION_MESSAGE);
 
-                        AllTasksScreen f = new AllTasksScreen();
-                        f.setVisible(true); // abre a tela com todas as tarefas do usuário
+                        TasksScreen t = new TasksScreen();
+                        t.setVisible(true); // abre a tela com todas as tarefas do usuário
                         this.setVisible(false); // fecha a tela de login
 
-                        f.userID(id);
+                        t.userID(id);
+
+                        // exemplo e = new exemplo();
+                        // e.setVisible(true); // abre a tela com todas as tarefas do usuário
+                        // this.setVisible(false); // fecha a tela de login
+
+                        // e.userID(id);
+
+                        // SwingUtilities.invokeLater(() -> {
+                        //         exemplo.createAndShowGUI();
+                        // });
 
                         return;
                 } else {
@@ -232,7 +245,7 @@ public class LoginScreen extends javax.swing.JFrame {
                 }
 
         }
-        
+
         private boolean checkIfUserExists(String nameUser, String tPassword) throws SQLException {
                 BDD bdd = new BDD();
                 ResultSet resultSet = bdd.listaUsuario();
@@ -304,7 +317,7 @@ public class LoginScreen extends javax.swing.JFrame {
                         }
                 });
         }
-        
+
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton jButton74;
         private javax.swing.JLabel jLabel73;
