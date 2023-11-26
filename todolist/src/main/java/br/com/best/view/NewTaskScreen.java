@@ -353,7 +353,7 @@ public class NewTaskScreen extends JFrame {
 
         private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
 
-                        TasksScreen a = new TasksScreen();
+                        TasksScreen a = new TasksScreen(id);
                         a.setVisible(true); // Botão Cancelar volta para tela de tarefas
                         this.setVisible(false); 
 
@@ -379,10 +379,9 @@ public class NewTaskScreen extends JFrame {
                 priority = null;
                 this.setVisible(false); // fecha a tela de criação de tarefas
 
-                // TasksScreen t = new TasksScreen(); // cria a tela de tarefas
-                // t.setVisible(true); // abre a tela de tarefas
+                TasksScreen t = new TasksScreen(id); // cria a tela de tarefas
+                t.setVisible(true); // abre a tela de tarefas
 
-                // t.userID(id);
         }
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
