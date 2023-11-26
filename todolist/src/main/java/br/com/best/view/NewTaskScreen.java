@@ -374,7 +374,7 @@ public class NewTaskScreen extends JFrame {
                 newTask.setUserId(id);
                 newTask.setPriority(priority);
 
-                new BDD().insertTarefa(newTask);
+                new BDD().insertTarefa(newTask); 
 
                 priority = null;
                 this.setVisible(false); // fecha a tela de criação de tarefas

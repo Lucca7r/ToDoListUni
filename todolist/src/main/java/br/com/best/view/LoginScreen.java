@@ -210,7 +210,7 @@ public class LoginScreen extends javax.swing.JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
         private void jTextField38ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextField38ActionPerformed
-                
+
         }// GEN-LAST:event_jTextField38ActionPerformed
 
         private void jButton74ActionPerformed(java.awt.event.ActionEvent evt) throws HeadlessException, SQLException {// GEN-FIRST:event_jButton74ActionPerformed
@@ -218,31 +218,25 @@ public class LoginScreen extends javax.swing.JFrame {
                 String nickName = jTextField38.getText();
                 String passwordUser = jTextField39.getText();
 
-                if (checkIfUserExists(nickName, passwordUser)) {
-                        JOptionPane.showMessageDialog(null, "Deu tudo certo!", "Sucesso",
-                                        JOptionPane.INFORMATION_MESSAGE);
-
-                        TasksScreen t = new TasksScreen(id);
-                        t.setVisible(true); // abre a tela com todas as tarefas do usuário
-                        this.setVisible(false); // fecha a tela de login
-
-                        t.userID(id);
-                        
-
-                        // exemplo e = new exemplo();
-                        // e.setVisible(true); // abre a tela com todas as tarefas do usuário
-                        // this.setVisible(false); // fecha a tela de login
-
-                        // e.userID(id);
-
-                        // SwingUtilities.invokeLater(() -> {
-                        //         exemplo.createAndShowGUI();
-                        // });
-
-                        return;
-                } else {
-                        JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!", "Erro",
+                if (passwordUser.isEmpty() || nickName.isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Campo vazio",
                                         JOptionPane.ERROR_MESSAGE);
+                } else {
+                        if (checkIfUserExists(nickName, passwordUser)) {
+                                JOptionPane.showMessageDialog(null, "Deu tudo certo!", "Sucesso",
+                                                JOptionPane.INFORMATION_MESSAGE);
+
+                                TasksScreen t = new TasksScreen(id);
+                                t.setVisible(true); // abre a tela com todas as tarefas do usuário
+                                this.setVisible(false); // fecha a tela de login
+
+                                t.userID(id);
+
+                                return;
+                        } else {
+                                JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!", "Erro",
+                                                JOptionPane.ERROR_MESSAGE);
+                        }
                 }
 
         }
@@ -263,7 +257,7 @@ public class LoginScreen extends javax.swing.JFrame {
                                                 return true;
                                         }
                                         System.out.println("Senha incorreta");
-                                       
+
                                 }
                         }
                 }
