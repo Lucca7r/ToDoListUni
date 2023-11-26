@@ -79,49 +79,13 @@ public class BDD {
         return ps.executeQuery();
     }     
 
+    public void deleteTarefa(int id) throws SQLException {
+        String sql = "DELETE FROM tarefa WHERE task_id = ?";
+        PreparedStatement ps = BancoConect.getConexao().prepareStatement(sql);
+        ps.setInt(1, id);
+        ps.execute();
+        ps.close();
+    }
 
 }
 
-// comentado para testes
-
-/*
- * private Connection connection;
- * 
- * 
- * public void conectar(Connection connection) throws SQLException {
- * this.connection = connection;
- * }
- * 
- * public void inserirUsuario(Usuario user) throws SQLException {
- * 
- * String sql =
- * "INSERT INTO usuario (nickName, name, password) VALUES (?, ?, ?)";
- * 
- * PreparedStatement preparedStatement = connection.prepareStatement(sql);
- * preparedStatement.setString(1, user.getNickName() );
- * preparedStatement.setString(2, user.getName());
- * preparedStatement.setString(3, user.getPassword());
- * preparedStatement.executeUpdate();
- * }
- * 
- * 
- * public void insertTarefa(Tarefa tarefa) throws SQLException {
- * String sql =
- * "INSERT INTO tarefa (name, description, start_date, end_date) VALUES (?, ?, ?, ? )"
- * ;
- * 
- * PreparedStatement preparedStatement = connection.prepareStatement(sql);
- * preparedStatement.setString(1, tarefa.getName());
- * preparedStatement.setString(2, tarefa.getDescription());
- * preparedStatement.setDate(3, tarefa.getStartDate());
- * preparedStatement.setDate(4, tarefa.getEndDate());
- * //preparedStatement.setDate(5, tarefa.getCreatedAt());
- * preparedStatement.executeUpdate();
- * }
- * 
- * public ResultSet listaTarefas() throws SQLException {
- * String sql = "SELECT * FROM tarefas";
- * PreparedStatement preparedStatement = connection.prepareStatement(sql);
- * return preparedStatement.executeQuery();
- * }
- */

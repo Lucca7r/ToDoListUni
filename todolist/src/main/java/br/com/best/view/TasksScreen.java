@@ -188,7 +188,7 @@ public class TasksScreen extends javax.swing.JFrame {
 
                 subPanel me;
 
-                public subPanel(String startDate, String endDate, String name, String priority) {
+                public subPanel(String startDate, String endDate, String name, String priority, int task_id) {
                         super();
                         me = this;
                         this.setBackground(new java.awt.Color(255, 255, 255));
@@ -221,8 +221,14 @@ public class TasksScreen extends javax.swing.JFrame {
                         deleteButton.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 // handle delete action here
-                        }
-                        });
+                                BDD bdd = new BDD();
+                                try {
+                                        bdd.deleteTarefa(task_id);
+                                } catch (SQLException e) {
+                                        e.printStackTrace();
+                                }
+                        
+                }});
 
                         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
                         this.setLayout(layout);
@@ -281,8 +287,9 @@ public class TasksScreen extends javax.swing.JFrame {
                                         String startDate = resultSet.getString("start_date");
                                         String endDate = resultSet.getString("end_date");
                                         String priority = resultSet.getString("priority");
-                                        System.out.println(name);
-                                        jPanel3.add(new subPanel(startDate, endDate, name, priority));
+                                        int task_id = resultSet.getInt("task_id");
+                                        System.out.println(task_id);
+                                        jPanel3.add(new subPanel(startDate, endDate, name, priority, task_id));
                                 }
                                 jPanel3.revalidate();
                                 jPanel3.repaint();

@@ -10,10 +10,15 @@ import javax.swing.JOptionPane;
 import br.com.best.model.Tarefa;
 import br.com.best.model.Usuario;
 import br.com.best.util.BDD;
+import br.com.best.view.HomeScreen;
 
 public class main {
   public static void main(String[] args) throws SQLException, ClassNotFoundException {
     BDD bdd = new BDD();
+
+
+    HomeScreen tela = new HomeScreen();
+    tela.setVisible(true);
 
     // ResultSet resultSet = bdd.listaTarefas();
 
@@ -37,16 +42,16 @@ public class main {
       
       // new BDD().inser(u);
       
-      Tarefa t = new Tarefa();
+      // Tarefa t = new Tarefa();
       
-      t.setName("cego");
-      t.setDescription("cego");
-      t.setStartDate(java.sql.Date.valueOf("2021-11-16"));
-      t.setEndDate(java.sql.Date.valueOf("2023-11-16"));
-      t.setUserId(3);
-      t.setPriority("alta");
+      // t.setName("cego");
+      // t.setDescription("cego");
+      // t.setStartDate(java.sql.Date.valueOf("2021-11-16"));
+      // t.setEndDate(java.sql.Date.valueOf("2023-11-16"));
+      // t.setUserId(3);
+      // t.setPriority("alta");
       
-      new BDD().insertTarefa(t);
+      // new BDD().insertTarefa(t);
      
 }
 }
