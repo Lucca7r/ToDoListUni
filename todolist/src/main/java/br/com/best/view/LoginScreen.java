@@ -222,15 +222,15 @@ public class LoginScreen extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "Deu tudo certo!", "Sucesso",
                                         JOptionPane.INFORMATION_MESSAGE);
 
-                        exemplo f = new exemplo();
-                        f.setVisible(true); // abre a tela com todas as tarefas do usuário
-                        this.setVisible(false); // fecha a tela de login
+                        // AllTasksScreen f = new AllTasksScreen();
+                        // f.setVisible(true); // abre a tela com todas as tarefas do usuário
+                        // this.setVisible(false); // fecha a tela de login
 
-                        f.userID(id);
+                        // f.userID(id);
 
-                        SwingUtilities.invokeLater(() -> {
-                                exemplo.createAndShowGUI();
-                        });
+                        // SwingUtilities.invokeLater(() -> {
+                        //         exemplo.createAndShowGUI();
+                        // });
 
                         this.setVisible(false); // close the login screen
 

@@ -351,10 +351,10 @@ public class NewTaskScreen extends JFrame {
                 new BDD().insertTarefa(newTask);
                 this.setVisible(false); // fecha a tela de criação de tarefas
 
-                AllTasksScreen f = new AllTasksScreen(); // cria a tela de tarefas
-                f.setVisible(true); // abre a tela de tarefas
+                TasksScreen t = new TasksScreen(); // cria a tela de tarefas
+                t.setVisible(true); // abre a tela de tarefas
 
-                f.userID(id);
+                t.userID(id);
         }
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
