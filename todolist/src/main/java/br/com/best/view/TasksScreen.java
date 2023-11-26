@@ -14,7 +14,6 @@ import javax.swing.JPanel;
 
 import br.com.best.util.BDD;
 
-
 /**
  *
  * @author Lorrana
@@ -135,9 +134,13 @@ public class TasksScreen extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
-        
-    }
+        private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+                 NewTaskScreen e = new NewTaskScreen();
+                 e.setVisible(true); // abre a tela com todas as tarefas do usuário
+                 this.setVisible(false); // fecha a tela de login
+
+                 e.userID(id);
+        }
 
         /**
          * @param args the command line arguments
@@ -258,7 +261,7 @@ public class TasksScreen extends javax.swing.JFrame {
 
         public void printarTarefas(int id) {
                 BDD bdd = new BDD();
-                try {   
+                try {
                         System.out.println(id);
                         ResultSet resultSet = bdd.listaTarefas(id);
                         if (resultSet != null) {
