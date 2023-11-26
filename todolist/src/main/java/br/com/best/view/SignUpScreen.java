@@ -292,8 +292,7 @@ public class SignUpScreen extends javax.swing.JFrame {
 
         private void jTextField37ActionPerformed(java.awt.event.ActionEvent evt) {
 
-        }// GEN-LAST:event_jTextField37ActionPerformed
-
+        }
         /**
          * @param args the command line arguments
          */
