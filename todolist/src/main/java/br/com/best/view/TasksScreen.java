@@ -7,6 +7,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import br.com.best.util.BDD;
@@ -224,9 +225,17 @@ public class TasksScreen extends javax.swing.JFrame {
                                 BDD bdd = new BDD();
                                 try {
                                         bdd.deleteTarefa(task_id);
+                                        JOptionPane.showMessageDialog(null, "Tarefa excluida", "Sucesso",
+                                        JOptionPane.PLAIN_MESSAGE);
                                 } catch (SQLException e) {
+                                        JOptionPane.showMessageDialog(null, "Não foi possivel excluir tente novamente!", "Erro",
+                                                JOptionPane.ERROR_MESSAGE);
                                         e.printStackTrace();
                                 }
+
+
+                                TasksScreen t = new TasksScreen(id); // cria a tela de tarefas
+                                t.setVisible(true);    
                         
                 }});
 
