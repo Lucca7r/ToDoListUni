@@ -4,6 +4,7 @@
  */
 package br.com.best.view;
 
+import java.awt.Dimension;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -191,6 +192,8 @@ public class TasksScreen extends javax.swing.JFrame {
                         this.setBackground(new java.awt.Color(255, 255, 255));
                         this.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 4, true));
                         this.setForeground(new java.awt.Color(0, 0, 0));
+                        int fixedHeight = 100;
+                        this.setPreferredSize(new Dimension(getPreferredSize().width, fixedHeight));
 
                         JLabel labelDataInicio = new javax.swing.JLabel();
                         labelDataInicio.setForeground(new java.awt.Color(0, 0, 0));
@@ -260,7 +263,7 @@ public class TasksScreen extends javax.swing.JFrame {
         public void printarTarefas() {
                 BDD bdd = new BDD();
                 try {
-                        ResultSet resultSet = bdd.listaTarefas(4);
+                        ResultSet resultSet = bdd.listaTarefas(2);
                         if (resultSet != null) {
                                 while (resultSet.next()) {
                                         String name = resultSet.getString("name");
