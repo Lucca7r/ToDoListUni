@@ -21,8 +21,12 @@ import br.com.best.util.BDD;
 public class TasksScreen extends javax.swing.JFrame {
         public static int id;
 
-        public TasksScreen() {
+        public TasksScreen(int id) {
+                this.id = id;
                 initComponents();
+                printarTarefas(id);
+                this.setPreferredSize(new java.awt.Dimension(982, 646));
+                this.pack();
         }
 
         void userID(int id) {
@@ -132,6 +136,9 @@ public class TasksScreen extends javax.swing.JFrame {
                                                                 javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
                 pack();
+                
+                System.out.println("teste:" + id);
+                printarTarefas(id);
         }// </editor-fold>//GEN-END:initComponents
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,7 +183,7 @@ public class TasksScreen extends javax.swing.JFrame {
                 /* Create and display the form */
                 java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
-                                TasksScreen tasksScreen = new TasksScreen();
+                                TasksScreen tasksScreen = new TasksScreen(id);
                                 tasksScreen.setVisible(true);
                                 tasksScreen.printarTarefas(id);
                         }
