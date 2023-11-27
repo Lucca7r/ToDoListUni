@@ -53,7 +53,7 @@ public class SignUpScreen extends javax.swing.JFrame {
                 jLabel76 = new javax.swing.JLabel();
                 jTextField38 = new javax.swing.JTextField();
                 jLabel77 = new javax.swing.JLabel();
-                jTextField39 = new javax.swing.JTextField();
+                jPasswordField1 = new javax.swing.JPasswordField();
                 jButton74 = new javax.swing.JButton();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -128,7 +128,7 @@ public class SignUpScreen extends javax.swing.JFrame {
                                                                                 .addComponent(jLabel76)
                                                                                 .addComponent(jTextField37)
                                                                                 .addComponent(jTextField38)
-                                                                                .addComponent(jTextField39,
+                                                                                .addComponent(jPasswordField1,
                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                                 350,
                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -185,7 +185,7 @@ public class SignUpScreen extends javax.swing.JFrame {
                                                                 .addComponent(jLabel77)
                                                                 .addPreferredGap(
                                                                                 javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(jTextField39,
+                                                                .addComponent(jPasswordField1,
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -254,7 +254,7 @@ public class SignUpScreen extends javax.swing.JFrame {
 
                 String nameUser = jTextField37.getText();
                 String nickName = jTextField38.getText();
-                String passwordUser = jTextField39.getText();
+                String passwordUser = new String(jPasswordField1.getPassword());
 
                 if (nameUser.isEmpty() || nickName.isEmpty() || passwordUser.isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Campo vazio",
@@ -359,6 +359,6 @@ public class SignUpScreen extends javax.swing.JFrame {
         private javax.swing.JPanel jPanel27;
         private javax.swing.JTextField jTextField37;
         private javax.swing.JTextField jTextField38;
-        private javax.swing.JTextField jTextField39;
+        private javax.swing.JPasswordField jPasswordField1;
         // End of variables declaration//GEN-END:variables
 }

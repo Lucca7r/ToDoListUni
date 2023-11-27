@@ -1,7 +1,9 @@
 package br.com.best.view;
 
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.text.MaskFormatter;
 import javax.swing.JOptionPane;
 
 import br.com.best.model.Tarefa;
@@ -10,6 +12,8 @@ import br.com.best.util.BDD;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowEvent;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.awt.Toolkit;
 
 /*
@@ -61,9 +65,15 @@ public class NewTaskScreen extends JFrame {
                 jScrollPane1 = new javax.swing.JScrollPane(); // descrição
                 jTextArea1 = new javax.swing.JTextArea(); // descrição
                 jLabel4 = new javax.swing.JLabel(); // data de inicio
-                jTextField2 = new javax.swing.JTextField(); // data de inicio
                 jLabel5 = new javax.swing.JLabel(); // data de inicio
-                jTextField3 = new javax.swing.JTextField(); // data de termino
+                try {
+                        MaskFormatter dateMask = new MaskFormatter("##/##/####");
+                        dateMask.setPlaceholderCharacter('_');
+                        jTextField2 = new JFormattedTextField(dateMask);
+                        jTextField3 = new JFormattedTextField(dateMask);
+                } catch (ParseException e) {
+                        e.printStackTrace();
+                }
                 jButton2 = new javax.swing.JButton(); // cancelar button
                 jButton3 = new javax.swing.JButton();// create button
                 jLabel6 = new javax.swing.JLabel(); // prioridade label
@@ -135,6 +145,9 @@ public class NewTaskScreen extends JFrame {
                                 try {
                                         jButton3ActionPerformed(evt);
                                 } catch (SQLException e) {
+                                        // TODO Auto-generated catch block
+                                        e.printStackTrace();
+                                } catch (ParseException e) {
                                         // TODO Auto-generated catch block
                                         e.printStackTrace();
                                 }
@@ -225,9 +238,15 @@ public class NewTaskScreen extends JFrame {
                                                                                                 .addGroup(jPanel3Layout
                                                                                                                 .createSequentialGroup()
                                                                                                                 .addComponent(jButton1)
-                                                                                                                .addGap(18, 18, 18)
+                                                                                                                .addPreferredGap(
+                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                                Short.MAX_VALUE)
                                                                                                                 .addComponent(jButton5)
-                                                                                                                .addGap(18, 18, 18)
+                                                                                                                .addPreferredGap(
+                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                                Short.MAX_VALUE)
                                                                                                                 .addComponent(jButton6)
                                                                                                                 .addPreferredGap(
                                                                                                                                 javax.swing.LayoutStyle.ComponentPlacement.RELATED,
@@ -295,9 +314,9 @@ public class NewTaskScreen extends JFrame {
                                                                 .addGroup(jPanel3Layout.createParallelGroup(
                                                                                 javax.swing.GroupLayout.Alignment.BASELINE)
                                                                                 .addComponent(jButton1)
-                                                                                .addComponent(jButton4)
                                                                                 .addComponent(jButton5)
-                                                                                .addComponent(jButton6))
+                                                                                .addComponent(jButton6)
+                                                                                .addComponent(jButton4))
                                                                 .addGap(13, 13, 13)
                                                                 .addGroup(jPanel3Layout.createParallelGroup(
                                                                                 javax.swing.GroupLayout.Alignment.BASELINE)
@@ -345,7 +364,7 @@ public class NewTaskScreen extends JFrame {
                                                                 javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
                 pack();
-        }// </editor-fold>//GEN-END:initComponents
+        }
 
         private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextField2ActionPerformed
 
@@ -353,28 +372,44 @@ public class NewTaskScreen extends JFrame {
 
         private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
 
-                        TasksScreen a = new TasksScreen(id);
-                        a.setVisible(true); // Botão Cancelar volta para tela de tarefas
-                        this.setVisible(false); 
+                TasksScreen a = new TasksScreen(id);
+                a.setVisible(true); // Botão Cancelar volta para tela de tarefas
+                this.setVisible(false);
 
         }// GEN-LAST:event_jButton2ActionPerformed
 
-        private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {// GEN-FIRST:event_jButton3ActionPerformed
+        private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) throws SQLException, ParseException {// GEN-FIRST:event_jButton3ActionPerformed
 
                 String nameTask = jTextField1.getText();
                 String descriptionTask = jTextArea1.getText();
+                // String startDateTask = jTextField2.getText();
+                // String endDateTask = jTextField3.getText();
+
                 String startDateTask = jTextField2.getText();
                 String endDateTask = jTextField3.getText();
+
+                System.out.println(startDateTask);
+                System.out.println(endDateTask);
+
+                SimpleDateFormat fromUser = new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat myFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+                String reformattedStartDate = myFormat.format(fromUser.parse(startDateTask));
+                String reformattedEndDate = myFormat.format(fromUser.parse(endDateTask));
+                System.out.println(reformattedStartDate);
+                System.out.println(reformattedEndDate);
 
                 Tarefa newTask = new Tarefa();
                 newTask.setName(nameTask);
                 newTask.setDescription(descriptionTask);
-                newTask.setStartDate(java.sql.Date.valueOf(startDateTask));
-                newTask.setEndDate(java.sql.Date.valueOf(endDateTask));
+                newTask.setStartDate(java.sql.Date.valueOf(reformattedStartDate));
+                newTask.setEndDate(java.sql.Date.valueOf(reformattedEndDate));
+                // newTask.setStartDate(java.sql.Date.valueOf(startDateTask));
+                // newTask.setEndDate(java.sql.Date.valueOf(endDateTask));
                 newTask.setUserId(id);
                 newTask.setPriority(priority);
 
-                new BDD().insertTarefa(newTask); 
+                new BDD().insertTarefa(newTask);
 
                 priority = null;
                 this.setVisible(false); // fecha a tela de criação de tarefas
@@ -385,25 +420,25 @@ public class NewTaskScreen extends JFrame {
         }
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
-                priority = "baixa";
-                System.out.println("baixa");
+                priority = "Baixa";
+                System.out.println("Baixa");
         }
 
         private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//
-                priority = "alta";
-                System.out.println("alta");
+                priority = "Alta";
+                System.out.println("Alta");
         }
 
-        
         private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//
-                priority = "media";
-        System.out.println("media");
+                priority = "Média";
+                System.out.println("Média");
         }
 
         private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//
-                priority = "urgente";
-                System.out.println("urgente");
+                priority = "Urgente";
+                System.out.println("Urgente");
         }
+
         /**
          * @param args the command line arguments
          */
@@ -470,7 +505,7 @@ public class NewTaskScreen extends JFrame {
         private javax.swing.JScrollPane jScrollPane1;
         private javax.swing.JTextArea jTextArea1;
         private javax.swing.JTextField jTextField1;
-        private javax.swing.JTextField jTextField2;
-        private javax.swing.JTextField jTextField3;
+        private javax.swing.JFormattedTextField jTextField2;
+        private javax.swing.JFormattedTextField jTextField3;
         // End of variables declaration//GEN-END:variables
 }
