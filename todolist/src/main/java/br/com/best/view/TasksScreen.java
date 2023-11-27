@@ -231,10 +231,23 @@ public class TasksScreen extends javax.swing.JFrame {
                         checkboxTarefa.setText("checkboxTarefa");
                         checkboxTarefa.setText(name);
 
-                        JLabel labelPrioridade = new javax.swing.JLabel();
+                        JButton labelPrioridade = new javax.swing.JButton();
                         labelPrioridade.setForeground(new java.awt.Color(0, 0, 0));
                         labelPrioridade.setText("labelPrioridade");
                         labelPrioridade.setText(priority);
+
+                        
+                        if ("Urgente".equals(priority)) {
+                                labelPrioridade.setBackground(new java.awt.Color(245,93,30));
+                        } else if ("Alta".equals(priority)) {
+                                labelPrioridade.setBackground(new java.awt.Color(253, 152, 0));
+                        } else if ("Média".equals(priority)) {
+                                labelPrioridade.setBackground(new java.awt.Color(255, 247, 87));
+                        } else if ("Baixa".equals(priority)) {
+                                labelPrioridade.setBackground(new java.awt.Color(181, 214, 167));
+                        } else {
+                                labelPrioridade.setBackground(new java.awt.Color(255, 255, 255));
+                        }
 
                         JButton deleteButton = new javax.swing.JButton();
                         deleteButton.setText("Delete");
