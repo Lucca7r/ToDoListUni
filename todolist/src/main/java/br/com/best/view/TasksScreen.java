@@ -71,7 +71,6 @@ public class TasksScreen extends javax.swing.JFrame {
                 jLabel1.setText("GERENCIADOR DE TAREFAS");
                 jLabel1.setToolTipText("");
                 jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-                
 
                 javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
                 jPanel1.setLayout(jPanel1Layout);
@@ -133,17 +132,18 @@ public class TasksScreen extends javax.swing.JFrame {
                                                                 javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
                 pack();
-                
+
                 // System.out.println("teste:" + id);
                 // printarTarefas(id);
         }
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-                 NewTaskScreen e = new NewTaskScreen();
-                 e.setVisible(true); // abre a tela com todas as tarefas do usuário
-                 this.setVisible(false); // fecha a tela de login
+                NewTaskScreen e = new NewTaskScreen();
+                System.out.println("tarefaaaaaaaa");
+                e.setVisible(true); // abre a tela com todas as tarefas do usuário
+                this.setVisible(false); // fecha a tela de login
 
-                 e.userID(id);
+                e.userID(id);
         }
 
         /**
@@ -220,24 +220,27 @@ public class TasksScreen extends javax.swing.JFrame {
                         JButton deleteButton = new javax.swing.JButton();
                         deleteButton.setText("Delete");
                         deleteButton.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                // handle delete action here
-                                BDD bdd = new BDD();
-                                try {
-                                        bdd.deleteTarefa(task_id);
-                                        JOptionPane.showMessageDialog(null, "Tarefa excluida", "Sucesso",
-                                        JOptionPane.PLAIN_MESSAGE);
-                                } catch (SQLException e) {
-                                        JOptionPane.showMessageDialog(null, "Não foi possivel excluir tente novamente!", "Erro",
-                                                JOptionPane.ERROR_MESSAGE);
-                                        e.printStackTrace();
+                                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                        // handle delete action here
+                                        BDD bdd = new BDD();
+                                        try {
+                                                bdd.deleteTarefa(task_id);
+                                                JOptionPane.showMessageDialog(null, "Tarefa excluida", "Sucesso",
+                                                                JOptionPane.INFORMATION_MESSAGE);
+                                        } catch (SQLException e) {
+                                                JOptionPane.showMessageDialog(null,
+                                                                "Não foi possivel excluir tente novamente!", "Erro",
+                                                                JOptionPane.ERROR_MESSAGE);
+                                                e.printStackTrace();
+                                        }
+
+                                        TasksScreen.this.setVisible(false);
+                                        TasksScreen t = new TasksScreen(id); // cria a tela de tarefas
+                                        t.setVisible(true);
+
                                 }
 
-
-                                TasksScreen t = new TasksScreen(id); // cria a tela de tarefas
-                                t.setVisible(true);    
-                        
-                }});
+                        });
 
                         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
                         this.setLayout(layout);
@@ -261,7 +264,7 @@ public class TasksScreen extends javax.swing.JFrame {
                                                                                                                                         javax.swing.GroupLayout.Alignment.LEADING)
                                                                                                                         .addComponent(labelDataTermino)
                                                                                                                         .addComponent(labelDataInicio))
-                                                                                                                        .addComponent(deleteButton)
+                                                                                                        .addComponent(deleteButton)
                                                                                                         .addGap(0, 0, Short.MAX_VALUE)))
                                                                         .addContainerGap()));
                         layout.setVerticalGroup(
@@ -272,7 +275,7 @@ public class TasksScreen extends javax.swing.JFrame {
                                                                                         javax.swing.GroupLayout.Alignment.BASELINE)
                                                                                         .addComponent(checkboxTarefa)
                                                                                         .addComponent(labelPrioridade))
-                                                                                        .addComponent(deleteButton)
+                                                                        .addComponent(deleteButton)
                                                                         .addPreferredGap(
                                                                                         javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                         .addComponent(labelDataInicio)
