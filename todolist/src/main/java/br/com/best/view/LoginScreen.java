@@ -214,9 +214,6 @@ public class LoginScreen extends javax.swing.JFrame {
                                         JOptionPane.ERROR_MESSAGE);
                 } else {
                         if (checkIfUserExists(nickName, passwordUser)) {
-                                JOptionPane.showMessageDialog(null, "Deu tudo certo!", "Sucesso",
-                                                JOptionPane.INFORMATION_MESSAGE);
-
                                 TasksScreen t = new TasksScreen(id);
                                 t.setVisible(true); // abre a tela com todas as tarefas do usuário
                                 this.setVisible(false); // fecha a tela de login
