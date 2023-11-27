@@ -3,10 +3,13 @@ package br.com.best.view;
 import java.awt.Desktop;
 import java.net.URI;
 
+import javax.swing.JFrame;
+
 public class HomeScreen extends javax.swing.JFrame {
 
     public HomeScreen() {
         initComponents();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
