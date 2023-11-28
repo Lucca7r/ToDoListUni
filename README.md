@@ -71,14 +71,13 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 </span>
 
 ## 🫱🏽‍🫲🏾Colaboradores
-  <p>
-    <span>
+
+
+- Colaboradores que fizeram parte do projeto.
+<br><br>
+
      -  [@Lorrana Nasareth](https://github.com/LorranaNS)
-     <br>
-      <br>
-    </span>
-   <span>
+    <br><br>
      -  [@Luan Medrado](https://github.com/LuanMedrado8)
-     <br>
-   </span>
-  </p>
+        <br><br>
+ 
