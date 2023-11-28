@@ -1,7 +1,7 @@
 <h1 align="center"> Projeto JAVA </h1>
 
 <p align="center">
-<img src="./assets/capaProjeto.png" alt="capa do projeto" width="600"><br>
+<img src="./assets/gifCapa.gif" alt="capa do projeto" width="600"><br>
 
 
 <p align="center">Projeto desenvolvido com java e com banco postgreSQL<br> PROJETO AINDA EM CONSTRUÇÃO 🏗️<br/>
