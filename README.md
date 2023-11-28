@@ -1,7 +1,7 @@
 <h1 align="center"> Projeto JAVA </h1>
 
 <p align="center">
-<img src="./assets/capaProjeto.png" alt="capa do projeto" width="600"><br>
+<img src="./assets/gifCapa.gif" alt="capa do projeto" width="600"><br>
 
 
 <p align="center">Projeto desenvolvido com java e com banco postgreSQL<br> PROJETO AINDA EM CONSTRUÇÃO 🏗️<br/>
@@ -71,14 +71,13 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 </span>
 
 ## 🫱🏽‍🫲🏾Colaboradores
-  <p>
-    <span>
+
+
+- Colaboradores que fizeram parte do projeto.
+<br><br>
+
      -  [@Lorrana Nasareth](https://github.com/LorranaNS)
-     <br>
-      <br>
-    </span>
-   <span>
+    <br><br>
      -  [@Luan Medrado](https://github.com/LuanMedrado8)
-     <br>
-   </span>
-  </p>
+        <br><br>
+ 
