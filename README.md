@@ -1,10 +1,10 @@
-<h1 align="center">📝 Gerenciador de tarefas 📝</h1>
+<h1 align="center">📝 Gerenciador de Tarefas 📝</h1>
 
 <p align="center">
 <img src="./assets/gifCapa.gif" alt="capa do projeto" width="700"><br>
 
 
-<p align="center">Projeto desenvolvido em java com integração PostgreSQL, versão web (PostgreSQL Elephant)<br> 
+<p align="center">Projeto desenvolvido em Java com integração PostgreSQL, versão web (PostgreSQL Elephant)<br> 
 </p>
 
 <p align="center">
