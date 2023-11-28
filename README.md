@@ -1,10 +1,10 @@
-<h1 align="center"> Projeto JAVA </h1>
+<h1 align="center">📝 Gerenciador de tarefas 📝</h1>
 
 <p align="center">
-<img src="./assets/gifCapa.gif" alt="capa do projeto" width="600"><br>
+<img src="./assets/gifCapa.gif" alt="capa do projeto" width="700"><br>
 
 
-<p align="center">Projeto desenvolvido com java e com banco postgreSQL<br> PROJETO AINDA EM CONSTRUÇÃO 🏗️<br/>
+<p align="center">Projeto desenvolvido em java com integração PostgreSQL, versão web (PostgreSQL Elephant)<br> 
 </p>
 
 <p align="center">
@@ -41,33 +41,33 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## 💻 Projeto
 <span> 
 <p align="center">
-<img src="./assets/telaDeInicial.png" alt="Tela de de start do projeto rodando" width="400">
-  </p><br><br>
+<img src="./assets/telaDeInicial.png" alt="Tela de de start do projeto rodando" width="600">
+  </p><br>
 
 
 
 <p align="center">
-<img src="./assets/TelaDeLogin.png" alt="tela de login da aplicação" width="400">
-  </p><br><br>
+<img src="./assets/telaLogin.png" alt="tela de login da aplicação" width="600">
+  </p><br>
 
 
 <p align="center">
-<img src="./assets/telaDeinscriçao.png" alt="" width="400">
-  </p><br><br>
+<img src="./assets/telaNovoUsuario.png" alt="" width="600">
+  </p><br>
 
 
 <p align="center">
-<img src="./assets/listasDeTarefas.png" alt="" width="400">
-  </p><br><br>
+<img src="./assets/telaTarefasLista.png" alt="" width="600">
+  </p><br>
 
 
 <p align="center">
-<img src="./assets/telaNovaTarefa.png" alt="" width="400">
+<img src="./assets/TelaNovaTarefa.png" alt="" width="600">
   </p><br>
 
 <p align="center">
-<img src="./assets/confirmaDeExcluir.png" alt="" width="400">
-  </p><br><br>
+<img src="./assets/telaExcluir.png" alt="" width="600">
+  </p><br>
 </span>
 
 ## 🫱🏽‍🫲🏾Colaboradores
