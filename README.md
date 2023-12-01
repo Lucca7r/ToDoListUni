@@ -134,7 +134,7 @@ De um modo geral, esse código define a interface com a qual o usuário interage
 
 <p align="center">
   <strong>Tela confirmações de excluisão</strong><br>
-<img src="./assets/telaExcluir.png" alt="" width="600">
+<img src="./assets/telaExcluirT.png" alt="" width="600">
     <br>
 </p>
 <br>
